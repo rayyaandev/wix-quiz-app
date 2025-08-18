@@ -1,0 +1,2062 @@
+// =========================
+// ARCHETYPES (15 total)
+// =========================
+const archetypes = [
+  {
+    id: "culturalConnoisseur",
+    name: "Cultural Connoisseur",
+    slug: "cultural-connoisseur",
+    url: "https://kiortravel.com/archetypes/cultural-connoisseur",
+    description: "You travel to connect with culture through art, architecture, and living traditions. You value depth, heritage, and meaningful context.",
+    traits: ["Curious", "Reflective", "Appreciative of history"],
+    values: ["Heritage", "Authenticity", "Context"],
+    interests: ["Museums", "Galleries", "Performing arts"],
+    recommendedDestinations: ["Kyoto", "Florence", "Istanbul"],
+    tips: ["Book timed museum entries", "Hire local docents for deeper context"],
+    image: "images/archetypes/cultural-connoisseur.jpg",
+    imageAlt: "Traveler appreciating museum art"
+  },
+  {
+    id: "soulfulNomad",
+    name: "Soulful Nomad",
+    slug: "soulful-nomad",
+    url: "https://kiortravel.com/archetypes/soulful-nomad",
+    description: "You seek slow, intentional journeys that nourish mind, body, and spirit. You value presence and community.",
+    traits: ["Mindful", "Calm", "Empathic"],
+    values: ["Presence", "Community", "Simplicity"],
+    interests: ["Retreats", "Local homestays", "Nature walks"],
+    recommendedDestinations: ["Ubud", "Sedona", "Tulum"],
+    tips: ["Plan spacious itineraries", "Journal reflections daily"],
+    image: "images/archetypes/soulful-nomad.jpg",
+    imageAlt: "Traveler meditating in nature"
+  },
+  {
+    id: "wildExplorer",
+    name: "Wild Explorer",
+    slug: "wild-explorer",
+    url: "https://kiortravel.com/archetypes/wild-explorer",
+    description: "You live for untamed places and raw experiences. Your compass points toward the horizon.",
+    traits: ["Adventurous", "Independent", "Resilient"],
+    values: ["Freedom", "Discovery", "Challenge"],
+    interests: ["Trekking", "Overlanding", "Wild camping"],
+    recommendedDestinations: ["Patagonia", "Namibia", "Alaska"],
+    tips: ["Train for altitude", "Respect park permits"],
+    image: "images/archetypes/wild-explorer.jpg",
+    imageAlt: "Traveler on a remote mountain ridge"
+  },
+  {
+    id: "urbanAesthete",
+    name: "Urban Aesthete",
+    slug: "urban-aesthete",
+    url: "https://kiortravel.com/archetypes/urban-aesthete",
+    description: "You thrive where design, food, and culture collide—vibrant neighborhoods and inspired spaces.",
+    traits: ["Stylish", "Social", "Design-savvy"],
+    values: ["Aesthetics", "Innovation", "Scene"],
+    interests: ["Boutiques", "Architecture tours", "Coffee culture"],
+    recommendedDestinations: ["Tokyo", "Copenhagen", "Mexico City"],
+    tips: ["Book design hotels midweek", "Use transit/metro day passes"],
+    image: "images/archetypes/urban-aesthete.jpg",
+    imageAlt: "Traveler in a stylish urban café"
+  },
+  {
+    id: "mindfulMinimalist",
+    name: "Mindful Minimalist",
+    slug: "mindful-minimalist",
+    url: "https://kiortravel.com/archetypes/mindful-minimalist",
+    description: "You pack light and travel lighter—prioritizing clarity, intentionality, and low-impact choices.",
+    traits: ["Intentional", "Organized", "Eco-aware"],
+    values: ["Simplicity", "Sustainability", "Focus"],
+    interests: ["Carry-on travel", "Zero-waste kits", "Walkable stays"],
+    recommendedDestinations: ["Zurich", "Reykjavík", "Portland"],
+    tips: ["Plan capsule wardrobe", "Choose rail over short flights"],
+    image: "images/archetypes/mindful-minimalist.jpg",
+    imageAlt: "Traveler with minimal backpack"
+  },
+  {
+    id: "socialConnector",
+    name: "Social Connector",
+    slug: "social-connector",
+    url: "https://kiortravel.com/archetypes/social-connector",
+    description: "You travel to meet people, spark conversations, and build global friendships.",
+    traits: ["Outgoing", "Warm", "Collaborative"],
+    values: ["Belonging", "Exchange", "Joy"],
+    interests: ["Meetups", "Group tours", "Community dinners"],
+    recommendedDestinations: ["Barcelona", "Buenos Aires", "Seoul"],
+    tips: ["Join themed walking tours", "Try language exchange nights"],
+    image: "images/archetypes/social-connector.jpg",
+    imageAlt: "Friends toasting at an outdoor table"
+  },
+  {
+    id: "luxeSeeker",
+    name: "Luxe Seeker",
+    slug: "luxe-seeker",
+    url: "https://kiortravel.com/archetypes/luxe-seeker",
+    description: "You relish comfort, service, and exquisite details—elevated stays and curated experiences.",
+    traits: ["Refined", "Comfort-seeking", "Discerning"],
+    values: ["Quality", "Service", "Ease"],
+    interests: ["Boutique hotels", "Fine dining", "Private guides"],
+    recommendedDestinations: ["Amalfi Coast", "Dubai", "St. Barts"],
+    tips: ["Leverage concierge access", "Travel shoulder season"],
+    image: "images/archetypes/luxe-seeker.jpg",
+    imageAlt: "Luxury hotel view"
+  },
+  {
+    id: "budgetBackpacker",
+    name: "Budget Backpacker",
+    slug: "budget-backpacker",
+    url: "https://kiortravel.com/archetypes/budget-backpacker",
+    description: "You maximize experiences per dollar with flexible, resourceful itineraries.",
+    traits: ["Adaptable", "Resourceful", "Curious"],
+    values: ["Value", "Spontaneity", "Community"],
+    interests: ["Hostels", "Street food", "Public transport"],
+    recommendedDestinations: ["Hanoi", "Oaxaca", "Sofia"],
+    tips: ["Travel off-peak", "Use overnight buses/trains"],
+    image: "images/archetypes/budget-backpacker.jpg",
+    imageAlt: "Backpacker at a hostel common room"
+  },
+  {
+    id: "natureGuardian",
+    name: "Nature Guardian",
+    slug: "nature-guardian",
+    url: "https://kiortravel.com/archetypes/nature-guardian",
+    description: "You travel to protect and celebrate the natural world, leaving only footprints.",
+    traits: ["Conscious", "Protective", "Connected"],
+    values: ["Conservation", "Sustainability", "Respect"],
+    interests: ["Eco-tours", "Volunteer projects", "Wildlife watching"],
+    recommendedDestinations: ["Costa Rica", "New Zealand", "Galapagos"],
+    tips: ["Choose certified eco-lodges", "Pack reusable everything"],
+    image: "images/archetypes/nature-guardian.jpg",
+    imageAlt: "Traveler planting trees in a forest"
+  },
+  {
+    id: "digitalNomad",
+    name: "Digital Nomad",
+    slug: "digital-nomad",
+    url: "https://kiortravel.com/archetypes/digital-nomad",
+    description: "You work from anywhere, building a life that combines productivity with exploration.",
+    traits: ["Adaptable", "Tech-savvy", "Independent"],
+    values: ["Freedom", "Efficiency", "Balance"],
+    interests: ["Co-working spaces", "Café hopping", "Local SIM cards"],
+    recommendedDestinations: ["Chiang Mai", "Lisbon", "Medellin"],
+    tips: ["Research visa requirements", "Join local nomad communities"],
+    image: "images/archetypes/digital-nomad.jpg",
+    imageAlt: "Traveler working on laptop in a café"
+  },
+  {
+    id: "foodieAdventurer",
+    name: "Foodie Adventurer",
+    slug: "foodie-adventurer",
+    url: "https://kiortravel.com/archetypes/foodie-adventurer",
+    description: "You travel with your tastebuds, seeking authentic flavors and culinary traditions.",
+    traits: ["Curious", "Adventurous", "Appreciative"],
+    values: ["Authenticity", "Tradition", "Discovery"],
+    interests: ["Cooking classes", "Food markets", "Local restaurants"],
+    recommendedDestinations: ["Bangkok", "Lyon", "Istanbul"],
+    tips: ["Book food tours early", "Learn basic food vocabulary"],
+    image: "images/archetypes/foodie-adventurer.jpg",
+    imageAlt: "Traveler sampling street food"
+  },
+  {
+    id: "historyBuff",
+    name: "History Buff",
+    slug: "history-buff",
+    url: "https://kiortravel.com/archetypes/history-buff",
+    description: "You travel through time, connecting past events to present understanding.",
+    traits: ["Analytical", "Curious", "Detail-oriented"],
+    values: ["Knowledge", "Context", "Understanding"],
+    interests: ["Historical sites", "Museums", "Guided tours"],
+    recommendedDestinations: ["Rome", "Athens", "Jerusalem"],
+    tips: ["Read up before visiting", "Hire knowledgeable guides"],
+    image: "images/archetypes/history-buff.jpg",
+    imageAlt: "Traveler examining ancient ruins"
+  },
+  {
+    id: "wellnessSeeker",
+    name: "Wellness Seeker",
+    slug: "wellness-seeker",
+    url: "https://kiortravel.com/archetypes/wellness-seeker",
+    description: "You travel to heal, restore, and enhance your physical and mental well-being.",
+    traits: ["Health-conscious", "Self-aware", "Balanced"],
+    values: ["Health", "Balance", "Growth"],
+    interests: ["Spa retreats", "Yoga classes", "Healthy cuisine"],
+    recommendedDestinations: ["Bali", "Switzerland", "Thailand"],
+    tips: ["Book wellness packages", "Pack comfortable activewear"],
+    image: "images/archetypes/wellness-seeker.jpg",
+    imageAlt: "Traveler doing yoga on a beach"
+  },
+  {
+    id: "adventureSeeker",
+    name: "Adventure Seeker",
+    slug: "adventure-seeker",
+    url: "https://kiortravel.com/archetypes/adventure-seeker",
+    description: "You crave adrenaline and physical challenges that push your limits.",
+    traits: ["Bold", "Energetic", "Determined"],
+    values: ["Challenge", "Excitement", "Achievement"],
+    interests: ["Rock climbing", "White water rafting", "Skydiving"],
+    recommendedDestinations: ["Queenstown", "Interlaken", "Moab"],
+    tips: ["Check safety certifications", "Book with reputable companies"],
+    image: "images/archetypes/adventure-seeker.jpg",
+    imageAlt: "Traveler rock climbing outdoors"
+  },
+  {
+    id: "romanticWanderer",
+    name: "Romantic Wanderer",
+    slug: "romantic-wanderer",
+    url: "https://kiortravel.com/archetypes/romantic-wanderer",
+    description: "You travel for love, connection, and creating magical moments with your partner.",
+    traits: ["Romantic", "Thoughtful", "Connection-focused"],
+    values: ["Love", "Intimacy", "Beauty"],
+    interests: ["Sunset dinners", "Couples massages", "Private tours"],
+    recommendedDestinations: ["Santorini", "Paris", "Maldives"],
+    tips: ["Book romantic accommodations", "Plan surprise experiences"],
+    image: "images/archetypes/romantic-wanderer.jpg",
+    imageAlt: "Couple watching sunset together"
+  }
+];
+
+// =========================
+// QUIZ LOGIC & SCORING
+// =========================
+const quizLogic = {
+  // Age range question
+  ageRange: {
+    0: { // 24 & Under
+      wildExplorer: 2,
+      budgetBackpacker: 2,
+      digitalNomad: 1,
+      adventureSeeker: 1
+    },
+    1: { // 25 - 30
+      socialConnector: 2,
+      urbanAesthete: 2,
+      foodieAdventurer: 1,
+      digitalNomad: 2
+    },
+    2: { // 30 - 40
+      culturalConnoisseur: 2,
+      mindfulMinimalist: 2,
+      luxeSeeker: 1,
+      wellnessSeeker: 1
+    },
+    3: { // 40 - 50
+      soulfulNomad: 2,
+      natureGuardian: 2,
+      historyBuff: 1,
+      romanticWanderer: 1
+    },
+    4: { // 50 - 60
+      culturalConnoisseur: 2,
+      wellnessSeeker: 2,
+      luxeSeeker: 2,
+      mindfulMinimalist: 1
+    },
+    5: { // 60+
+      soulfulNomad: 2,
+      culturalConnoisseur: 2,
+      wellnessSeeker: 2,
+      adventureSeeker: -1
+    }
+  },
+  
+  // Personality type question
+  personalityType: {
+    1: { // Introvert
+      soulfulNomad: 3,
+      mindfulMinimalist: 2,
+      natureGuardian: 2,
+      culturalConnoisseur: 1,
+      socialConnector: -2
+    },
+    5: { // Ambivert
+      urbanAesthete: 2,
+      foodieAdventurer: 2,
+      digitalNomad: 1,
+      budgetBackpacker: 1
+    },
+    10: { // Extravert
+      socialConnector: 3,
+      adventureSeeker: 2,
+      urbanAesthete: 2,
+      romanticWanderer: 1,
+      soulfulNomad: -1
+    }
+  },
+  
+  // Languages question (multiselect)
+  languages: {
+    english: { culturalConnoisseur: 1, digitalNomad: 1 },
+    spanish: { foodieAdventurer: 1, budgetBackpacker: 1 },
+    french: { luxeSeeker: 1, culturalConnoisseur: 1 },
+    mandarin: { urbanAesthete: 1, mindfulMinimalist: 1 },
+    japanese: { urbanAesthete: 2, culturalConnoisseur: 1 },
+    arabic: { culturalConnoisseur: 1, soulfulNomad: 1 },
+    portuguese: { foodieAdventurer: 1, adventureSeeker: 1 },
+    italian: { foodieAdventurer: 2, romanticWanderer: 1 },
+    german: { mindfulMinimalist: 1, natureGuardian: 1 },
+    russian: { historyBuff: 1, culturalConnoisseur: 1 }
+  },
+  
+  // Relationship status question
+  relationshipStatus: {
+    0: { // Single - Not Looking
+      wildExplorer: 2,
+      digitalNomad: 2,
+      adventureSeeker: 1,
+      romanticWanderer: -2
+    },
+    1: { // Single - Looking
+      socialConnector: 2,
+      urbanAesthete: 1,
+      adventureSeeker: 1,
+      romanticWanderer: 1
+    },
+    2: { // In a relationship
+      romanticWanderer: 2,
+      soulfulNomad: 1,
+      wellnessSeeker: 1,
+      socialConnector: 1
+    },
+    3: { // Married
+      romanticWanderer: 2,
+      culturalConnoisseur: 1,
+      luxeSeeker: 1,
+      mindfulMinimalist: 1
+    }
+  },
+  
+  // Values question (tag-multiselect)
+  values: {
+    hometown: { socialConnector: 1, culturalConnoisseur: 1 },
+    ethnicity: { culturalConnoisseur: 2, soulfulNomad: 1 },
+    income: { luxeSeeker: 2, budgetBackpacker: -1 },
+    languageFluency: { culturalConnoisseur: 2, digitalNomad: 1 },
+    occupation: { urbanAesthete: 1, mindfulMinimalist: 1 },
+    religiousAffiliation: { soulfulNomad: 2, culturalConnoisseur: 1 },
+    preferredSocialSettings: { socialConnector: 2, urbanAesthete: 1 },
+    age: { socialConnector: 1, mindfulMinimalist: 1 },
+    availability: { digitalNomad: 1, adventureSeeker: 1 },
+    class: { mindfulMinimalist: 1, budgetBackpacker: 1 },
+    culturalBackground: { culturalConnoisseur: 2, soulfulNomad: 1 },
+    educationLevel: { culturalConnoisseur: 1, mindfulMinimalist: 1 },
+    genderIdentity: { socialConnector: 1, urbanAesthete: 1 },
+    hobbies: { adventureSeeker: 1, foodieAdventurer: 1 },
+    moralValues: { soulfulNomad: 2, natureGuardian: 1 },
+    musicTaste: { urbanAesthete: 1, socialConnector: 1 },
+    politicalAffiliation: { mindfulMinimalist: 1, culturalConnoisseur: 1 },
+    senseOfHumor: { socialConnector: 2, foodieAdventurer: 1 },
+    sexualOrientation: { socialConnector: 1, urbanAesthete: 1 },
+    substanceUse: { adventureSeeker: 1, budgetBackpacker: 1 }
+  },
+  
+  // Humor importance question
+  humor: {
+    0: { // Essential
+      socialConnector: 3,
+      foodieAdventurer: 1,
+      urbanAesthete: 1
+    },
+    1: { // Like occasionally
+      socialConnector: 1,
+      culturalConnoisseur: 1,
+      mindfulMinimalist: 1
+    },
+    2: { // Don't mind
+      soulfulNomad: 1,
+      natureGuardian: 1,
+      historyBuff: 1
+    },
+    3: { // Don't find funny
+      soulfulNomad: 1,
+      mindfulMinimalist: 1,
+      socialConnector: -2
+    }
+  }
+};
+
+// =========================
+// INTERNATIONALIZATION
+// =========================
+const i18n = {
+  en: {
+    startQuiz: "Start Quiz",
+    next: "Next",
+    back: "Back",
+    complete: "Complete",
+    loading: "Calculating your results...",
+    mainArchetype: "Your Main Archetype",
+    secondaryArchetypes: "Secondary Archetypes",
+    viewDetails: "View Details",
+    shareResults: "Share Your Results",
+    emailResults: "Email Me My Results",
+    retakeQuiz: "Retake Quiz",
+    peopleShare: "people share your archetype",
+    thankYou: "Thank you for completing the quiz!"
+  },
+  es: {
+    startQuiz: "Comenzar Quiz",
+    next: "Siguiente",
+    back: "Atrás",
+    complete: "Completar",
+    loading: "Calculando tus resultados...",
+    mainArchetype: "Tu Arquetipo Principal",
+    secondaryArchetypes: "Arquetipos Secundarios",
+    viewDetails: "Ver Detalles",
+    shareResults: "Compartir Resultados",
+    emailResults: "Enviar Resultados por Email",
+    retakeQuiz: "Repetir Quiz",
+    peopleShare: "personas comparten tu arquetipo",
+    thankYou: "¡Gracias por completar el quiz!"
+  },
+  fr: {
+    startQuiz: "Commencer le Quiz",
+    next: "Suivant",
+    back: "Retour",
+    complete: "Terminer",
+    loading: "Calcul de vos résultats...",
+    mainArchetype: "Votre Archétype Principal",
+    secondaryArchetypes: "Archétypes Secondaires",
+    viewDetails: "Voir les Détails",
+    shareResults: "Partager Vos Résultats",
+    emailResults: "Envoyez-moi Mes Résultats",
+    retakeQuiz: "Refaire le Quiz",
+    peopleShare: "personnes partagent votre archétype",
+    thankYou: "Merci d'avoir terminé le quiz !"
+  }
+};
+
+// =========================
+// APP CONFIGURATION
+// =========================
+const appConfig = {
+  maxSelections: 5,
+  animationDuration: 300,
+  language: 'en',
+  saveProgress: true,
+  showProgress: true
+};
+
+// =========================
+// QUIZ QUESTIONS
+// =========================
+const questions = [
+  {
+    id: "intro",
+    type: "intro",
+    title: "Discover your Traveler Archetype",
+    intro: "This isn't your average travel quiz.\n\nOver the next <b>5 - 10 minutes</b>, you'll move through carefully designed questions that uncover your unique traveler archetype...<br><br>Let's get into it.",
+    button: "Let's go →",
+    maxScore: 0
+  },
+  {
+    id: "ageRange",
+    type: "single",
+    label: "Please select your age range",
+    required: true,
+    options: [
+      { badge: "A", text: "24 & Under" },
+      { badge: "B", text: "25 - 30" },
+      { badge: "C", text: "30 - 40" },
+      { badge: "D", text: "40 - 50" },
+      { badge: "E", text: "50 - 60" },
+      { badge: "F", text: "60+" }
+    ],
+    maxScore: 3
+  },
+  {
+    id: "name",
+    type: "text",
+    label: "Please enter your first and last name",
+    required: true,
+    maxScore: 0
+  },
+  {
+    id: "personalityType",
+    type: "scale",
+    label: "What is your personality type?",
+    required: true,
+    min: 1,
+    max: 10,
+    leftLabel: "Introvert",
+    midLabel: "Ambivert",
+    rightLabel: "Extravert",
+    maxScore: 3
+  },
+  {
+    id: "languages",
+    type: "multiselect",
+    label: "What languages do you speak? Select all that may apply.",
+    required: true,
+    options: [
+      "Arabic", "Bengali", "Cantonese", "Dutch", "English",
+      "Farsi", "French", "German", "Greek", "Hausa",
+      "Hebrew", "Hindi", "Igbo", "Italian", "Japanese",
+      "Korean", "Mandarin", "Portuguese", "Punjabi", "Russian",
+      "Spanish", "Swahili", "Tagalog", "Thai", "Turkish",
+      "Urdu", "Vietnamese", "Yoruba", "Other"
+    ],
+    maxScore: 4
+  },
+  {
+    id: "relationshipStatus",
+    type: "select",
+    label: "What is your current relationship status?",
+    required: true,
+    helper: "Understanding your relationship status allows us to develop more intentional recommendations.",
+    options: [
+      "Single - Not Looking",
+      "Single - Looking",
+      "In a relationship",
+      "Married",
+      "In an open relationship",
+      "Widowed",
+      "Divorced",
+      "Other"
+    ],
+    maxScore: 3
+  },
+  {
+    id: "values",
+    type: "tag-multiselect",
+    label: "What factors are most important to you when meeting new people? Select all that may apply.",
+    required: true,
+    options: [
+      { text: "Hometown", color: "option-orange" },
+      { text: "Ethnicity", color: "option-purple" },
+      { text: "Income", color: "option-yellow" },
+      { text: "Language fluency", color: "option-yellow" },
+      { text: "Occupation", color: "option-purple" },
+      { text: "Religious affiliation", color: "option-orange" },
+      { text: "Preferred social settings", color: "option-green" },
+      { text: "Age", color: "option-pink" },
+      { text: "Availability", color: "option-yellow" },
+      { text: "Class", color: "option-yellow" },
+      { text: "Cultural background", color: "option-green" },
+      { text: "Education level", color: "option-blue" },
+      { text: "Gender identity", color: "option-pink" },
+      { text: "Hobbies", color: "option-blue" },
+      { text: "Moral values", color: "option-green" },
+      { text: "Music taste", color: "option-blue" },
+      { text: "Political affiliation", color: "option-purple" },
+      { text: "Sense of humor", color: "option-orange" },
+      { text: "Sexual orientation", color: "option-yellow" },
+      { text: "Substance use", color: "option-green" }
+    ],
+    maxScore: 6
+  },
+  {
+    id: "humor",
+    type: "single",
+    label: "How important to you is... Humor",
+    required: true,
+    options: [
+      { badge: "A", text: "A good sense of humor is essential" },
+      { badge: "B", text: "I like laughing occasionally" },
+      { badge: "C", text: "I don't mind people with no sense of humor" },
+      { badge: "D", text: "I don't find much funny" }
+    ],
+    maxScore: 3
+  }
+];
+
+// =========================
+// QUIZ STATE
+// =========================
+let currentStep = 0;
+let answers = {};
+let archetypeScores = {};
+
+// =========================
+// SCORING FUNCTIONS
+// =========================
+function calculateArchetypeScores() {
+  // Reset scores
+  archetypes.forEach(archetype => {
+    archetypeScores[archetype.id] = 0;
+  });
+  
+  // Calculate scores based on answers
+  Object.keys(answers).forEach(questionId => {
+    const answer = 
+    
+// =========================
+// ARCHETYPES (15 total)
+// =========================
+const archetypes = [
+  {
+    id: "culturalConnoisseur",
+    name: "Cultural Connoisseur",
+    slug: "cultural-connoisseur",
+    url: "https://kiortravel.com/archetypes/cultural-connoisseur",
+    description: "You travel to connect with culture through art, architecture, and living traditions. You value depth, heritage, and meaningful context.",
+    traits: ["Curious", "Reflective", "Appreciative of history"],
+    values: ["Heritage", "Authenticity", "Context"],
+    interests: ["Museums", "Galleries", "Performing arts"],
+    recommendedDestinations: ["Kyoto", "Florence", "Istanbul"],
+    tips: ["Book timed museum entries", "Hire local docents for deeper context"],
+    image: "images/archetypes/cultural-connoisseur.jpg",
+    imageAlt: "Traveler appreciating museum art"
+  },
+  {
+    id: "soulfulNomad",
+    name: "Soulful Nomad",
+    slug: "soulful-nomad",
+    url: "https://kiortravel.com/archetypes/soulful-nomad",
+    description: "You seek slow, intentional journeys that nourish mind, body, and spirit. You value presence and community.",
+    traits: ["Mindful", "Calm", "Empathic"],
+    values: ["Presence", "Community", "Simplicity"],
+    interests: ["Retreats", "Local homestays", "Nature walks"],
+    recommendedDestinations: ["Ubud", "Sedona", "Tulum"],
+    tips: ["Plan spacious itineraries", "Journal reflections daily"],
+    image: "images/archetypes/soulful-nomad.jpg",
+    imageAlt: "Traveler meditating in nature"
+  },
+  {
+    id: "wildExplorer",
+    name: "Wild Explorer",
+    slug: "wild-explorer",
+    url: "https://kiortravel.com/archetypes/wild-explorer",
+    description: "You live for untamed places and raw experiences. Your compass points toward the horizon.",
+    traits: ["Adventurous", "Independent", "Resilient"],
+    values: ["Freedom", "Discovery", "Challenge"],
+    interests: ["Trekking", "Overlanding", "Wild camping"],
+    recommendedDestinations: ["Patagonia", "Namibia", "Alaska"],
+    tips: ["Train for altitude", "Respect park permits"],
+    image: "images/archetypes/wild-explorer.jpg",
+    imageAlt: "Traveler on a remote mountain ridge"
+  },
+  {
+    id: "urbanAesthete",
+    name: "Urban Aesthete",
+    slug: "urban-aesthete",
+    url: "https://kiortravel.com/archetypes/urban-aesthete",
+    description: "You thrive where design, food, and culture collide—vibrant neighborhoods and inspired spaces.",
+    traits: ["Stylish", "Social", "Design-savvy"],
+    values: ["Aesthetics", "Innovation", "Scene"],
+    interests: ["Boutiques", "Architecture tours", "Coffee culture"],
+    recommendedDestinations: ["Tokyo", "Copenhagen", "Mexico City"],
+    tips: ["Book design hotels midweek", "Use transit/metro day passes"],
+    image: "images/archetypes/urban-aesthete.jpg",
+    imageAlt: "Traveler in a stylish urban café"
+  },
+  {
+    id: "mindfulMinimalist",
+    name: "Mindful Minimalist",
+    slug: "mindful-minimalist",
+    url: "https://kiortravel.com/archetypes/mindful-minimalist",
+    description: "You pack light and travel lighter—prioritizing clarity, intentionality, and low-impact choices.",
+    traits: ["Intentional", "Organized", "Eco-aware"],
+    values: ["Simplicity", "Sustainability", "Focus"],
+    interests: ["Carry-on travel", "Zero-waste kits", "Walkable stays"],
+    recommendedDestinations: ["Zurich", "Reykjavík", "Portland"],
+    tips: ["Plan capsule wardrobe", "Choose rail over short flights"],
+    image: "images/archetypes/mindful-minimalist.jpg",
+    imageAlt: "Traveler with minimal backpack"
+  },
+  {
+    id: "socialConnector",
+    name: "Social Connector",
+    slug: "social-connector",
+    url: "https://kiortravel.com/archetypes/social-connector",
+    description: "You travel to meet people, spark conversations, and build global friendships.",
+    traits: ["Outgoing", "Warm", "Collaborative"],
+    values: ["Belonging", "Exchange", "Joy"],
+    interests: ["Meetups", "Group tours", "Community dinners"],
+    recommendedDestinations: ["Barcelona", "Buenos Aires", "Seoul"],
+    tips: ["Join themed walking tours", "Try language exchange nights"],
+    image: "images/archetypes/social-connector.jpg",
+    imageAlt: "Friends toasting at an outdoor table"
+  },
+  {
+    id: "luxeSeeker",
+    name: "Luxe Seeker",
+    slug: "luxe-seeker",
+    url: "https://kiortravel.com/archetypes/luxe-seeker",
+    description: "You relish comfort, service, and exquisite details—elevated stays and curated experiences.",
+    traits: ["Refined", "Comfort-seeking", "Discerning"],
+    values: ["Quality", "Service", "Ease"],
+    interests: ["Boutique hotels", "Fine dining", "Private guides"],
+    recommendedDestinations: ["Amalfi Coast", "Dubai", "St. Barts"],
+    tips: ["Leverage concierge access", "Travel shoulder season"],
+    image: "images/archetypes/luxe-seeker.jpg",
+    imageAlt: "Luxury hotel view"
+  },
+  {
+    id: "budgetBackpacker",
+    name: "Budget Backpacker",
+    slug: "budget-backpacker",
+    url: "https://kiortravel.com/archetypes/budget-backpacker",
+    description: "You maximize experiences per dollar with flexible, resourceful itineraries.",
+    traits: ["Adaptable", "Resourceful", "Curious"],
+    values: ["Value", "Spontaneity", "Community"],
+    interests: ["Hostels", "Street food", "Public transport"],
+    recommendedDestinations: ["Hanoi", "Oaxaca", "Sofia"],
+    tips: ["Travel off-peak", "Use overnight buses/trains"],
+    image: "images/archetypes/budget-backpacker.jpg",
+    imageAlt: "Backpacker at a hostel common room"
+  },
+  {
+    id: "natureGuardian",
+    name: "Nature Guardian",
+    slug: "nature-guardian",
+    url: "https://kiortravel.com/archetypes/nature-guardian",
+    description: "You protect and preserve while exploring—sustainable travel that honors the natural world.",
+    traits: ["Conscious", "Protective", "Connected"],
+    values: ["Conservation", "Respect", "Balance"],
+    interests: ["Eco-lodges", "Volunteer programs", "Wildlife watching"],
+    recommendedDestinations: ["Costa Rica", "New Zealand", "Galapagos"],
+    tips: ["Choose certified eco-accommodations", "Leave no trace principles"],
+    image: "images/archetypes/nature-guardian.jpg",
+    imageAlt: "Traveler observing wildlife respectfully"
+  },
+  {
+    id: "foodieAdventurer",
+    name: "Foodie Adventurer",
+    slug: "foodie-adventurer",
+    url: "https://kiortravel.com/archetypes/foodie-adventurer",
+    description: "You explore cultures through their cuisines—every meal is a journey of discovery.",
+    traits: ["Curious", "Adventurous", "Appreciative"],
+    values: ["Authenticity", "Tradition", "Innovation"],
+    interests: ["Cooking classes", "Food markets", "Local restaurants"],
+    recommendedDestinations: ["Bangkok", "Lyon", "Lima"],
+    tips: ["Book food tours early", "Learn basic food vocabulary"],
+    image: "images/archetypes/foodie-adventurer.jpg",
+    imageAlt: "Traveler sampling local street food"
+  },
+  {
+    id: "historyBuff",
+    name: "History Buff",
+    slug: "history-buff",
+    url: "https://kiortravel.com/archetypes/history-buff",
+    description: "You travel through time, connecting past and present through stories and artifacts.",
+    traits: ["Analytical", "Curious", "Respectful"],
+    values: ["Knowledge", "Context", "Preservation"],
+    interests: ["Historical sites", "Archaeological tours", "Museums"],
+    recommendedDestinations: ["Rome", "Athens", "Petra"],
+    tips: ["Read up before visiting", "Hire knowledgeable guides"],
+    image: "images/archetypes/history-buff.jpg",
+    imageAlt: "Traveler exploring ancient ruins"
+  },
+  {
+    id: "wellnessWanderer",
+    name: "Wellness Wanderer",
+    slug: "wellness-wanderer",
+    url: "https://kiortravel.com/archetypes/wellness-wanderer",
+    description: "You prioritize health and wellbeing while traveling—mindful movement and holistic experiences.",
+    traits: ["Health-conscious", "Balanced", "Self-aware"],
+    values: ["Wellness", "Balance", "Growth"],
+    interests: ["Yoga retreats", "Spa experiences", "Healthy cuisine"],
+    recommendedDestinations: ["Bali", "Switzerland", "Thailand"],
+    tips: ["Pack workout gear", "Research wellness facilities"],
+    image: "images/archetypes/wellness-wanderer.jpg",
+    imageAlt: "Traveler doing yoga in nature"
+  },
+  {
+    id: "photographerExplorer",
+    name: "Photographer Explorer",
+    slug: "photographer-explorer",
+    url: "https://kiortravel.com/archetypes/photographer-explorer",
+    description: "You capture moments and tell stories through your lens—every destination is a canvas.",
+    traits: ["Creative", "Patient", "Observant"],
+    values: ["Beauty", "Storytelling", "Preservation"],
+    interests: ["Landscape photography", "Street photography", "Cultural portraits"],
+    recommendedDestinations: ["Iceland", "Morocco", "Japan"],
+    tips: ["Research golden hour times", "Respect local photography customs"],
+    image: "images/archetypes/photographer-explorer.jpg",
+    imageAlt: "Traveler taking photos of landscape"
+  },
+  {
+    id: "adventureSeeker",
+    name: "Adventure Seeker",
+    slug: "adventure-seeker",
+    url: "https://kiortravel.com/archetypes/adventure-seeker",
+    description: "You crave adrenaline and physical challenges—pushing boundaries and testing limits.",
+    traits: ["Brave", "Energetic", "Determined"],
+    values: ["Challenge", "Achievement", "Excitement"],
+    interests: ["Rock climbing", "White water rafting", "Skydiving"],
+    recommendedDestinations: ["Nepal", "New Zealand", "Switzerland"],
+    tips: ["Check safety certifications", "Train appropriately"],
+    image: "images/archetypes/adventure-seeker.jpg",
+    imageAlt: "Traveler rock climbing"
+  },
+  {
+    id: "digitalNomad",
+    name: "Digital Nomad",
+    slug: "digital-nomad",
+    url: "https://kiortravel.com/archetypes/digital-nomad",
+    description: "You work from anywhere, blending productivity with exploration—global offices and local experiences.",
+    traits: ["Adaptable", "Productive", "Connected"],
+    values: ["Freedom", "Efficiency", "Balance"],
+    interests: ["Co-working spaces", "Local cafes", "Reliable wifi"],
+    recommendedDestinations: ["Chiang Mai", "Lisbon", "Mexico City"],
+    tips: ["Research visa requirements", "Join digital nomad communities"],
+    image: "images/archetypes/digital-nomad.jpg",
+    imageAlt: "Traveler working on laptop in café"
+  }
+];
+
+// =========================
+// QUIZ LOGIC & SCORING
+// =========================
+const quizLogic = {
+  // Age range
+  ageRange: {
+    0: { culturalConnoisseur: 1, urbanAesthete: 2, socialConnector: 3 },
+    1: { culturalConnoisseur: 2, urbanAesthete: 3, socialConnector: 2, adventureSeeker: 1 },
+    2: { culturalConnoisseur: 3, soulfulNomad: 2, luxeSeeker: 2, mindfulMinimalist: 1 },
+    3: { soulfulNomad: 3, luxeSeeker: 3, culturalConnoisseur: 2, wellnessWanderer: 1 },
+    4: { soulfulNomad: 3, wellnessWanderer: 2, culturalConnoisseur: 2, mindfulMinimalist: 1 },
+    5: { soulfulNomad: 3, wellnessWanderer: 3, mindfulMinimalist: 2, culturalConnoisseur: 1 }
+  },
+  
+  // Personality type (scale 1-10)
+  personalityType: {
+    1: { mindfulMinimalist: 3, soulfulNomad: 2, natureGuardian: 1 },
+    2: { mindfulMinimalist: 3, soulfulNomad: 2, natureGuardian: 1 },
+    3: { mindfulMinimalist: 2, soulfulNomad: 2, natureGuardian: 1 },
+    4: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 },
+    5: { soulfulNomad: 1, mindfulMinimalist: 1, socialConnector: 1 },
+    6: { socialConnector: 1, urbanAesthete: 1, foodieAdventurer: 1 },
+    7: { socialConnector: 2, urbanAesthete: 2, foodieAdventurer: 1 },
+    8: { socialConnector: 2, urbanAesthete: 2, foodieAdventurer: 2 },
+    9: { socialConnector: 3, urbanAesthete: 2, foodieAdventurer: 2 },
+    10: { socialConnector: 3, urbanAesthete: 3, foodieAdventurer: 2 }
+  },
+  
+  // Languages (multiselect)
+  languages: {
+    0: { culturalConnoisseur: 2, historyBuff: 1 }, // Arabic
+    1: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Bengali
+    2: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Cantonese
+    3: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Dutch
+    4: { socialConnector: 1, digitalNomad: 1 }, // English
+    5: { culturalConnoisseur: 2, historyBuff: 1 }, // Farsi
+    6: { culturalConnoisseur: 2, luxeSeeker: 1 }, // French
+    7: { culturalConnoisseur: 2, mindfulMinimalist: 1 }, // German
+    8: { c
+
+
+    // =========================
+// ARCHETYPES (15 total)
+// =========================
+const archetypes = [
+  {
+    id: "culturalConnoisseur",
+    name: "Cultural Connoisseur",
+    slug: "cultural-connoisseur",
+    url: "https://kiortravel.com/archetypes/cultural-connoisseur",
+    description: "You travel to connect with culture through art, architecture, and living traditions. You value depth, heritage, and meaningful context.",
+    traits: ["Curious", "Reflective", "Appreciative of history"],
+    values: ["Heritage", "Authenticity", "Context"],
+    interests: ["Museums", "Galleries", "Performing arts"],
+    recommendedDestinations: ["Kyoto", "Florence", "Istanbul"],
+    tips: ["Book timed museum entries", "Hire local docents for deeper context"],
+    image: "images/archetypes/cultural-connoisseur.jpg",
+    imageAlt: "Traveler appreciating museum art"
+  },
+  {
+    id: "soulfulNomad",
+    name: "Soulful Nomad",
+    slug: "soulful-nomad",
+    url: "https://kiortravel.com/archetypes/soulful-nomad",
+    description: "You seek slow, intentional journeys that nourish mind, body, and spirit. You value presence and community.",
+    traits: ["Mindful", "Calm", "Empathic"],
+    values: ["Presence", "Community", "Simplicity"],
+    interests: ["Retreats", "Local homestays", "Nature walks"],
+    recommendedDestinations: ["Ubud", "Sedona", "Tulum"],
+    tips: ["Plan spacious itineraries", "Journal reflections daily"],
+    image: "images/archetypes/soulful-nomad.jpg",
+    imageAlt: "Traveler meditating in nature"
+  },
+  {
+    id: "wildExplorer",
+    name: "Wild Explorer",
+    slug: "wild-explorer",
+    url: "https://kiortravel.com/archetypes/wild-explorer",
+    description: "You live for untamed places and raw experiences. Your compass points toward the horizon.",
+    traits: ["Adventurous", "Independent", "Resilient"],
+    values: ["Freedom", "Discovery", "Challenge"],
+    interests: ["Trekking", "Overlanding", "Wild camping"],
+    recommendedDestinations: ["Patagonia", "Namibia", "Alaska"],
+    tips: ["Train for altitude", "Respect park permits"],
+    image: "images/archetypes/wild-explorer.jpg",
+    imageAlt: "Traveler on a remote mountain ridge"
+  },
+  {
+    id: "urbanAesthete",
+    name: "Urban Aesthete",
+    slug: "urban-aesthete",
+    url: "https://kiortravel.com/archetypes/urban-aesthete",
+    description: "You thrive where design, food, and culture collide—vibrant neighborhoods and inspired spaces.",
+    traits: ["Stylish", "Social", "Design-savvy"],
+    values: ["Aesthetics", "Innovation", "Scene"],
+    interests: ["Boutiques", "Architecture tours", "Coffee culture"],
+    recommendedDestinations: ["Tokyo", "Copenhagen", "Mexico City"],
+    tips: ["Book design hotels midweek", "Use transit/metro day passes"],
+    image: "images/archetypes/urban-aesthete.jpg",
+    imageAlt: "Traveler in a stylish urban café"
+  },
+  {
+    id: "mindfulMinimalist",
+    name: "Mindful Minimalist",
+    slug: "mindful-minimalist",
+    url: "https://kiortravel.com/archetypes/mindful-minimalist",
+    description: "You pack light and travel lighter—prioritizing clarity, intentionality, and low-impact choices.",
+    traits: ["Intentional", "Organized", "Eco-aware"],
+    values: ["Simplicity", "Sustainability", "Focus"],
+    interests: ["Carry-on travel", "Zero-waste kits", "Walkable stays"],
+    recommendedDestinations: ["Zurich", "Reykjavík", "Portland"],
+    tips: ["Plan capsule wardrobe", "Choose rail over short flights"],
+    image: "images/archetypes/mindful-minimalist.jpg",
+    imageAlt: "Traveler with minimal backpack"
+  },
+  {
+    id: "socialConnector",
+    name: "Social Connector",
+    slug: "social-connector",
+    url: "https://kiortravel.com/archetypes/social-connector",
+    description: "You travel to meet people, spark conversations, and build global friendships.",
+    traits: ["Outgoing", "Warm", "Collaborative"],
+    values: ["Belonging", "Exchange", "Joy"],
+    interests: ["Meetups", "Group tours", "Community dinners"],
+    recommendedDestinations: ["Barcelona", "Buenos Aires", "Seoul"],
+    tips: ["Join themed walking tours", "Try language exchange nights"],
+    image: "images/archetypes/social-connector.jpg",
+    imageAlt: "Friends toasting at an outdoor table"
+  },
+  {
+    id: "luxeSeeker",
+    name: "Luxe Seeker",
+    slug: "luxe-seeker",
+    url: "https://kiortravel.com/archetypes/luxe-seeker",
+    description: "You relish comfort, service, and exquisite details—elevated stays and curated experiences.",
+    traits: ["Refined", "Comfort-seeking", "Discerning"],
+    values: ["Quality", "Service", "Ease"],
+    interests: ["Boutique hotels", "Fine dining", "Private guides"],
+    recommendedDestinations: ["Amalfi Coast", "Dubai", "St. Barts"],
+    tips: ["Leverage concierge access", "Travel shoulder season"],
+    image: "images/archetypes/luxe-seeker.jpg",
+    imageAlt: "Luxury hotel view"
+  },
+  {
+    id: "budgetBackpacker",
+    name: "Budget Backpacker",
+    slug: "budget-backpacker",
+    url: "https://kiortravel.com/archetypes/budget-backpacker",
+    description: "You maximize experiences per dollar with flexible, resourceful itineraries.",
+    traits: ["Adaptable", "Resourceful", "Curious"],
+    values: ["Value", "Spontaneity", "Community"],
+    interests: ["Hostels", "Street food", "Public transport"],
+    recommendedDestinations: ["Hanoi", "Oaxaca", "Sofia"],
+    tips: ["Travel off-peak", "Use overnight buses/trains"],
+    image: "images/archetypes/budget-backpacker.jpg",
+    imageAlt: "Backpacker at a hostel common room"
+  },
+  {
+    id: "natureGuardian",
+    name: "Nature Guardian",
+    slug: "nature-guardian",
+    url: "https://kiortravel.com/archetypes/nature-guardian",
+    description: "You protect and preserve while exploring—sustainable travel that honors the natural world.",
+    traits: ["Conscious", "Protective", "Connected"],
+    values: ["Conservation", "Respect", "Balance"],
+    interests: ["Eco-lodges", "Volunteer programs", "Wildlife watching"],
+    recommendedDestinations: ["Costa Rica", "New Zealand", "Galapagos"],
+    tips: ["Choose certified eco-accommodations", "Leave no trace principles"],
+    image: "images/archetypes/nature-guardian.jpg",
+    imageAlt: "Traveler observing wildlife respectfully"
+  },
+  {
+    id: "foodieAdventurer",
+    name: "Foodie Adventurer",
+    slug: "foodie-adventurer",
+    url: "https://kiortravel.com/archetypes/foodie-adventurer",
+    description: "You explore cultures through their cuisines—every meal is a journey of discovery.",
+    traits: ["Curious", "Adventurous", "Appreciative"],
+    values: ["Authenticity", "Tradition", "Innovation"],
+    interests: ["Cooking classes", "Food markets", "Local restaurants"],
+    recommendedDestinations: ["Bangkok", "Lyon", "Lima"],
+    tips: ["Book food tours early", "Learn basic food vocabulary"],
+    image: "images/archetypes/foodie-adventurer.jpg",
+    imageAlt: "Traveler sampling local street food"
+  },
+  {
+    id: "historyBuff",
+    name: "History Buff",
+    slug: "history-buff",
+    url: "https://kiortravel.com/archetypes/history-buff",
+    description: "You travel through time, connecting past and present through stories and artifacts.",
+    traits: ["Analytical", "Curious", "Respectful"],
+    values: ["Knowledge", "Context", "Preservation"],
+    interests: ["Historical sites", "Archaeological tours", "Museums"],
+    recommendedDestinations: ["Rome", "Athens", "Petra"],
+    tips: ["Read up before visiting", "Hire knowledgeable guides"],
+    image: "images/archetypes/history-buff.jpg",
+    imageAlt: "Traveler exploring ancient ruins"
+  },
+  {
+    id: "wellnessWanderer",
+    name: "Wellness Wanderer",
+    slug: "wellness-wanderer",
+    url: "https://kiortravel.com/archetypes/wellness-wanderer",
+    description: "You prioritize health and wellbeing while traveling—mindful movement and holistic experiences.",
+    traits: ["Health-conscious", "Balanced", "Self-aware"],
+    values: ["Wellness", "Balance", "Growth"],
+    interests: ["Yoga retreats", "Spa experiences", "Healthy cuisine"],
+    recommendedDestinations: ["Bali", "Switzerland", "Thailand"],
+    tips: ["Pack workout gear", "Research wellness facilities"],
+    image: "images/archetypes/wellness-wanderer.jpg",
+    imageAlt: "Traveler doing yoga in nature"
+  },
+  {
+    id: "photographerExplorer",
+    name: "Photographer Explorer",
+    slug: "photographer-explorer",
+    url: "https://kiortravel.com/archetypes/photographer-explorer",
+    description: "You capture moments and tell stories through your lens—every destination is a canvas.",
+    traits: ["Creative", "Patient", "Observant"],
+    values: ["Beauty", "Storytelling", "Preservation"],
+    interests: ["Landscape photography", "Street photography", "Cultural portraits"],
+    recommendedDestinations: ["Iceland", "Morocco", "Japan"],
+    tips: ["Research golden hour times", "Respect local photography customs"],
+    image: "images/archetypes/photographer-explorer.jpg",
+    imageAlt: "Traveler taking photos of landscape"
+  },
+  {
+    id: "adventureSeeker",
+    name: "Adventure Seeker",
+    slug: "adventure-seeker",
+    url: "https://kiortravel.com/archetypes/adventure-seeker",
+    description: "You crave adrenaline and physical challenges—pushing boundaries and testing limits.",
+    traits: ["Brave", "Energetic", "Determined"],
+    values: ["Challenge", "Achievement", "Excitement"],
+    interests: ["Rock climbing", "White water rafting", "Skydiving"],
+    recommendedDestinations: ["Nepal", "New Zealand", "Switzerland"],
+    tips: ["Check safety certifications", "Train appropriately"],
+    image: "images/archetypes/adventure-seeker.jpg",
+    imageAlt: "Traveler rock climbing"
+  },
+  {
+    id: "digitalNomad",
+    name: "Digital Nomad",
+    slug: "digital-nomad",
+    url: "https://kiortravel.com/archetypes/digital-nomad",
+    description: "You work from anywhere, blending productivity with exploration—global offices and local experiences.",
+    traits: ["Adaptable", "Productive", "Connected"],
+    values: ["Freedom", "Efficiency", "Balance"],
+    interests: ["Co-working spaces", "Local cafes", "Reliable wifi"],
+    recommendedDestinations: ["Chiang Mai", "Lisbon", "Mexico City"],
+    tips: ["Research visa requirements", "Join digital nomad communities"],
+    image: "images/archetypes/digital-nomad.jpg",
+    imageAlt: "Traveler working on laptop in café"
+  }
+];
+
+// =========================
+// QUIZ LOGIC & SCORING
+// =========================
+const quizLogic = {
+  // Age range
+  ageRange: {
+    0: { culturalConnoisseur: 1, urbanAesthete: 2, socialConnector: 3 },
+    1: { culturalConnoisseur: 2, urbanAesthete: 3, socialConnector: 2, adventureSeeker: 1 },
+    2: { culturalConnoisseur: 3, soulfulNomad: 2, luxeSeeker: 2, mindfulMinimalist: 1 },
+    3: { soulfulNomad: 3, luxeSeeker: 3, culturalConnoisseur: 2, wellnessWanderer: 1 },
+    4: { soulfulNomad: 3, wellnessWanderer: 2, culturalConnoisseur: 2, mindfulMinimalist: 1 },
+    5: { soulfulNomad: 3, wellnessWanderer: 3, mindfulMinimalist: 2, culturalConnoisseur: 1 }
+  },
+  
+  // Personality type (scale 1-10)
+  personalityType: {
+    1: { mindfulMinimalist: 3, soulfulNomad: 2, natureGuardian: 1 },
+    2: { mindfulMinimalist: 3, soulfulNomad: 2, natureGuardian: 1 },
+    3: { mindfulMinimalist: 2, soulfulNomad: 2, natureGuardian: 1 },
+    4: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 },
+    5: { soulfulNomad: 1, mindfulMinimalist: 1, socialConnector: 1 },
+    6: { socialConnector: 1, urbanAesthete: 1, foodieAdventurer: 1 },
+    7: { socialConnector: 2, urbanAesthete: 2, foodieAdventurer: 1 },
+    8: { socialConnector: 2, urbanAesthete: 2, foodieAdventurer: 2 },
+    9: { socialConnector: 3, urbanAesthete: 2, foodieAdventurer: 2 },
+    10: { socialConnector: 3, urbanAesthete: 3, foodieAdventurer: 2 }
+  },
+  
+  // Languages (multiselect)
+  languages: {
+    0: { culturalConnoisseur: 2, historyBuff: 1 }, // Arabic
+    1: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Bengali
+    2: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Cantonese
+    3: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Dutch
+    4: { socialConnector: 1, digitalNomad: 1 }, // English
+    5: { culturalConnoisseur: 2, historyBuff: 1 }, // Farsi
+    6: { culturalConnoisseur: 2, luxeSeeker: 1 }, // French
+    7: { culturalConnoisseur: 2, mindfulMinimalist: 1 }, // German
+    8: { culturalConnoisseur: 2, historyBuff: 1 }, // Greek
+    9: { culturalConnoisseur: 1, natureGuardian: 1 }, // Hausa
+    10: { culturalConnoisseur: 2, historyBuff: 1 }, // Hebrew
+    11: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Hindi
+    12: { culturalConnoisseur: 1, natureGuardian: 1 }, // Igbo
+    13: { culturalConnoisseur: 2, foodieAdventurer: 2 }, // Italian
+    14: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Japanese
+    15: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Korean
+    16: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Mandarin
+    17: { culturalConnoisseur: 2, foodieAdventurer: 1 }, // Portuguese
+    18: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Punjabi
+    19: { culturalConnoisseur: 2, historyBuff: 1 }, // Russian
+    20: { culturalConnoisseur: 2, foodieAdventurer: 1 }, // Spanish
+    21: { culturalConnoisseur: 1, natureGuardian: 1 }, // Swahili
+    22: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Tagalog
+    23: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Thai
+    24: { culturalConnoisseur: 2, historyBuff: 1 }, // Turkish
+    25: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Urdu
+    26: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Vietnamese
+    27: { culturalConnoisseur: 1, natureGuardian: 1 }, // Yoruba
+    28: { culturalConnoisseur: 1, socialConnector: 1 } // Other
+  },
+  
+  // Relationship status
+  relationshipStatus: {
+    0: { mindfulMinimalist: 2, soulfulNomad: 1, socialConnector: -1 },
+    1: { socialConnector: 3, urbanAesthete: 2, foodieAdventurer: 1 },
+    2: { soulfulNomad: 2, mindfulMinimalist: 1, socialConnector: 1 },
+    3: { luxeSeeker: 2, soulfulNomad: 1, mindfulMinimalist: 1 },
+    4: { socialConnector: 2, urbanAesthete: 1, foodieAdventurer: 1 },
+    5: { soulfulNomad: 2, mindfulMinimalist: 1, natureGuardian: 1 },
+    6: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 },
+    7: { culturalConnoisseur: 1, socialConnector: 1, foodieAdventurer: 1 }
+  },
+  
+  // Important factors for meeting people
+  meetingFactors: {
+    0: { socialConnector: 2, culturalConnoisseur: 1 }, // Hometown
+    1: { culturalConnoisseur: 2, socialConnector: 1 }, // Ethnicity
+    2: { luxeSeeker: 2, mindfulMinimalist: -1 }, // Income
+    3: { culturalConnoisseur: 2, socialConnector: 2 }, // Language fluency
+    4: { urbanAesthete: 2, socialConnector: 1 }, // Occupation
+    5: { culturalConnoisseur: 2, soulfulNomad: 1 }, // Religious affiliation
+    6: { socialConnector: 3, urbanAesthete: 2 }, // Preferred social settings
+    7: { socialConnector: 1, mindfulMinimalist: 1 }, // Age
+    8: { socialConnector: 2, mindfulMinimalist: 1 }, // Availability
+    9: { mindfulMinimalist: 1, luxeSeeker: -1 }, // Class
+    10: { culturalConnoisseur: 3, socialConnector: 2 }, // Cultural background
+    11: { culturalConnoisseur: 2, mindfulMinimalist: 1 }, // Education level
+    12: { socialConnector: 1, mindfulMinimalist: 1 }, // Gender identity
+    13: { socialConnector: 2, adventureSeeker: 1 }, // Hobbies
+    14: { soulfulNomad: 2, mindfulMinimalist: 2 }, // Moral values
+    15: { socialConnector: 2, urbanAesthete: 1 }, // Music taste
+    16: { culturalConnoisseur: 1, mindfulMinimalist: 1 }, // Political affiliation
+    17: { socialConnector: 3, foodieAdventurer: 1 }, // Sense of humor
+    18: { socialConnector: 1, mindfulMinimalist: 1 }, // Sexual orientation
+    19: { socialConnector: 1, mindfulMinimalist: -1 } // Substance use
+  },
+  
+  // Humor importance
+  humorImportance: {
+    0: { socialConnector: 3, foodieAdventurer: 2, urbanAesthete: 1 },
+    1: { socialConnector: 2, foodieAdventurer: 1, urbanAesthete: 1 },
+    2: { mindfulMinimalist: 1, soulfulNomad: 1, natureGuardian: 1 },
+    3: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 }
+  }
+};
+
+// =========================
+// QUIZ QUESTIONS
+// =========================
+const questions = [
+  {
+    id: "intro",
+    type: "intro",
+    title: "Discover your Traveler Archetype",
+    intro: "This isn't your average travel quiz.\n\nOver the next <b>5 - 10 minutes</b>, you'll move through carefully designed questions that uncover your unique traveler archetype...<br><br>Let's get into it.",
+    button: "Let's go →",
+    maxScore: 0
+  },
+  {
+    id: "ageRange",
+    type: "single",
+    label: "Please select your age range",
+    required: true,
+    options: [
+      { badge: "A", text: "24 & Under" },
+      { badge: "B", text: "25 - 30" },
+      { badge: "C", text: "30 - 40" },
+      { badge: "D", text: "40 - 50" },
+      { badge: "E", text: "50 - 60" },
+      { badge: "F", text: "60+" }
+    ],
+    maxScore: 3
+  },
+  {
+    id: "name",
+    type: "text",
+    label: "Please enter your first and last name",
+    required: true,
+    maxScore: 0
+  },
+  {
+    id: "personalityType",
+    type: "scale",
+    label: "What is your personality type?",
+    required: true,
+    min: 1,
+    max: 10,
+    leftLabel: "Introvert",
+    midLabel: "Ambivert",
+    rightLabel: "Extravert",
+    maxScore: 3
+  },
+  {
+    id: "languages",
+    type: "multiselect",
+    label: "What languages do you speak? Select all that may apply.",
+    required: true,
+    options: [
+      "Arabic", "Bengali", "Cantonese", "Dutch", "English", "Farsi", "French", "German",
+      "Greek", "Hausa", "Hebrew", "Hindi", "Igbo", "Italian", "Japanese", "Korean",
+      "Mandarin", "Portuguese", "Punjabi", "Russian", "Spanish", "Swahili", "Tagalog",
+      "Thai", "Turkish", "Urdu", "Vietnamese", "Yoruba", "Other"
+    ],
+    maxScore: 6
+  },
+  {
+    id: "relationshipStatus",
+    type: "select",
+    label: "What is your current relationship status?",
+    required: true,
+    helper: "Understanding your relationship status allows us to develop more intentional recommendations.",
+    options: [
+      "Single - Not Looking", "Single - Looking", "In a relationship", "Married",
+      "In an open relationship", "Widowed", "Divorced", "Other"
+    ],
+    maxScore: 3
+  },
+  {
+    id: "meetingFactors",
+    type: "tag-multiselect",
+    label: "What factors are most important to you when meeting new people? Select all that may apply.",
+    required: true,
+    options: [
+      { text: "Hometown", color: "option-orange" },
+      { text: "Ethnicity", color: "option-purple" },
+      { text: "Income", color: "option-yellow" },
+      { text: "Language fluency", color: "option-yellow" },
+      { text: "Occupation", color: "option-purple" },
+      { text: "Religious affiliation", color: "option-orange" },
+      { text: "Preferred social settings", color: "option-green" },
+      { text: "Age", color: "option-pink" },
+      { text: "Availability", color: "option-yellow" },
+      { text: "Class", color: "option-yellow" },
+      { text: "Cultural background", color: "option-green" },
+      { text: "Education level", color: "option-blue" },
+      { text: "Gender identity", color: "option-pink" },
+      { text: "Hobbies", color: "option-blue" },
+      { text: "Moral values", color: "option-green" },
+      { text: "Music taste", color: "option-blue" },
+      { text: "Political affiliation", color: "option-purple" },
+      { text: "Sense of humor", color: "option-orange" },
+      { text: "Sexual orientation", color: "option-yellow" },
+      { text: "Substance use", color: "option-green" }
+    ],
+    maxScore: 9
+  },
+  {
+    id: "humorImportance",
+    type: "single",
+    label: "How important to you is... Humor",
+    required: true,
+    options: [
+      { badge: "A", text: "A good sense of humor is essential" },
+      { badge: "B", text: "I like laughing occasionally" },
+      { badge: "C", text: "I don't mind people with no sense of humor" },
+      { badge: "D", text: "I don't find much funny" }
+    ],
+    maxScore: 3
+  }
+];
+
+// =========================
+// INTERNATIONALIZATION
+// =========================
+const i18n = {
+  en: {
+    startQuiz: "Start Quiz",
+    next: "Next",
+    back: "Back",
+    loading: "Calculating your results...",
+    resultsTitle: "Your Travel Archetype Results",
+    mainArchetype: "Your Main Archetype",
+    secondaryArchetypes: "Secondary Archetypes",
+    viewDetails: "View Details",
+    shareResults: "Share Your Results",
+    emailResults: "Email Me My Results",
+    retakeQuiz: "Retake Quiz",
+    thankYou: "Thank you for completing the quiz!",
+    communityCount: "people share your archetype"
+  },
+  es: {
+    startQuiz: "Comenzar Quiz",
+    next: "Siguiente",
+    back: "Atrás",
+    loading: "Calculando tus resultados...",
+    resultsTitle: "Tus Resultados de Arquetipo de Viaje",
+    mainArchetype: "Tu Arquetipo Principal",
+    secondaryArchetypes: "Arquetipos Secundarios",
+    viewDetails: "Ver Detalles",
+    shareResults: "Compartir Tus Resultados",
+    emailResults: "Enviar Mis Resultados por Email",
+    retakeQuiz: "Repetir Quiz",
+    thankYou: "¡Gracias por completar el quiz!",
+    communityCount: "personas comparten tu arquetipo"
+  },
+  fr: {
+    startQuiz: "Commencer le Quiz",
+    next: "Suivant",
+    back: "Retour",
+    loading: "Calcul de vos résultats...",
+    resultsTitle: "Vos Résultats d'Archetype de Voyage",
+    mainArchetype: "Votre Archetype Principal",
+    secondaryArchetypes: "Archetypes Secondaires",
+    viewDetails: "Voir les Détails",
+    shareResults: "Partager Vos Résultats",
+    emailResults: "M'envoyer Mes Résultats par Email",
+    retakeQuiz: "Refaire le Quiz",
+    thankYou: "Merci d'avoir complété le quiz !",
+    communityCount: "personnes partagent votre archetype"
+  }
+};
+
+// =========================
+// APP CONFIGURATION
+// =========================
+const appConfig = {
+  currentLanguage: 'en',
+  maxSelections: 5,
+  animationDuration: 300,
+  saveProgress: true,
+  showCommunityCount: true
+};
+
+// =========================
+// QUIZ STATE
+// =========================
+let currentStep = 0;
+let answers = {};
+let archetypeScores = {};
+
+// =========================
+// HELPER FUNCTIONS
+// =========================
+function renderProgress(step, total) {
+  if (questions[step].type === "intro") return "";
+  const percent = Math.round((step / (total - 1)) * 100);
+  return `
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar" style="width:${percent}%;"></div>
+      <div class="quiz-progress-label">${percent}% complete</div>
+    </div>
+  `;
+}
+
+function calculateArchetypeScores() {
+  // Reset scores
+  archetypes.forEach(archetype => {
+    archetypeScores[archetype.id] = 0;
+  });
+  
+  // Calculate scores based on answers
+  Object.keys(answers).forEach(questionId => {
+    const answer = answers[questionId];
+    const question = questions.find(q => q.id === questionId);
+    
+    if (!question || !quizLogic[questionId]) return;
+    
+    if (Array.isArra
+      
+      // =========================
+      // ARCHETYPES (15 total)
+      // =========================
+      const archetypes = [
+        {
+          id: "culturalConnoisseur",
+          name: "Cultural Connoisseur",
+          slug: "cultural-connoisseur",
+          url: "https://kiortravel.com/archetypes/cultural-connoisseur",
+          description: "You travel to connect with culture through art, architecture, and living traditions. You value depth, heritage, and meaningful context.",
+          traits: ["Curious", "Reflective", "Appreciative of history"],
+          values: ["Heritage", "Authenticity", "Context"],
+          interests: ["Museums", "Galleries", "Performing arts"],
+          recommendedDestinations: ["Kyoto", "Florence", "Istanbul"],
+          tips: ["Book timed museum entries", "Hire local docents for deeper context"],
+          image: "images/archetypes/cultural-connoisseur.jpg",
+          imageAlt: "Traveler appreciating museum art"
+        },
+        {
+          id: "soulfulNomad",
+          name: "Soulful Nomad",
+          slug: "soulful-nomad",
+          url: "https://kiortravel.com/archetypes/soulful-nomad",
+          description: "You seek slow, intentional journeys that nourish mind, body, and spirit. You value presence and community.",
+          traits: ["Mindful", "Calm", "Empathic"],
+          values: ["Presence", "Community", "Simplicity"],
+          interests: ["Retreats", "Local homestays", "Nature walks"],
+          recommendedDestinations: ["Ubud", "Sedona", "Tulum"],
+          tips: ["Plan spacious itineraries", "Journal reflections daily"],
+          image: "images/archetypes/soulful-nomad.jpg",
+          imageAlt: "Traveler meditating in nature"
+        },
+        {
+          id: "wildExplorer",
+          name: "Wild Explorer",
+          slug: "wild-explorer",
+          url: "https://kiortravel.com/archetypes/wild-explorer",
+          description: "You live for untamed places and raw experiences. Your compass points toward the horizon.",
+          traits: ["Adventurous", "Independent", "Resilient"],
+          values: ["Freedom", "Discovery", "Challenge"],
+          interests: ["Trekking", "Overlanding", "Wild camping"],
+          recommendedDestinations: ["Patagonia", "Namibia", "Alaska"],
+          tips: ["Train for altitude", "Respect park permits"],
+          image: "images/archetypes/wild-explorer.jpg",
+          imageAlt: "Traveler on a remote mountain ridge"
+        },
+        {
+          id: "urbanAesthete",
+          name: "Urban Aesthete",
+          slug: "urban-aesthete",
+          url: "https://kiortravel.com/archetypes/urban-aesthete",
+          description: "You thrive where design, food, and culture collide—vibrant neighborhoods and inspired spaces.",
+          traits: ["Stylish", "Social", "Design-savvy"],
+          values: ["Aesthetics", "Innovation", "Scene"],
+          interests: ["Boutiques", "Architecture tours", "Coffee culture"],
+          recommendedDestinations: ["Tokyo", "Copenhagen", "Mexico City"],
+          tips: ["Book design hotels midweek", "Use transit/metro day passes"],
+          image: "images/archetypes/urban-aesthete.jpg",
+          imageAlt: "Traveler in a stylish urban café"
+        },
+        {
+          id: "mindfulMinimalist",
+          name: "Mindful Minimalist",
+          slug: "mindful-minimalist",
+          url: "https://kiortravel.com/archetypes/mindful-minimalist",
+          description: "You pack light and travel lighter—prioritizing clarity, intentionality, and low-impact choices.",
+          traits: ["Intentional", "Organized", "Eco-aware"],
+          values: ["Simplicity", "Sustainability", "Focus"],
+          interests: ["Carry-on travel", "Zero-waste kits", "Walkable stays"],
+          recommendedDestinations: ["Zurich", "Reykjavík", "Portland"],
+          tips: ["Plan capsule wardrobe", "Choose rail over short flights"],
+          image: "images/archetypes/mindful-minimalist.jpg",
+          imageAlt: "Traveler with minimal backpack"
+        },
+        {
+          id: "socialConnector",
+          name: "Social Connector",
+          slug: "social-connector",
+          url: "https://kiortravel.com/archetypes/social-connector",
+          description: "You travel to meet people, spark conversations, and build global friendships.",
+          traits: ["Outgoing", "Warm", "Collaborative"],
+          values: ["Belonging", "Exchange", "Joy"],
+          interests: ["Meetups", "Group tours", "Community dinners"],
+          recommendedDestinations: ["Barcelona", "Buenos Aires", "Seoul"],
+          tips: ["Join themed walking tours", "Try language exchange nights"],
+          image: "images/archetypes/social-connector.jpg",
+          imageAlt: "Friends toasting at an outdoor table"
+        },
+        {
+          id: "luxeSeeker",
+          name: "Luxe Seeker",
+          slug: "luxe-seeker",
+          url: "https://kiortravel.com/archetypes/luxe-seeker",
+          description: "You relish comfort, service, and exquisite details—elevated stays and curated experiences.",
+          traits: ["Refined", "Comfort-seeking", "Discerning"],
+          values: ["Quality", "Service", "Ease"],
+          interests: ["Boutique hotels", "Fine dining", "Private guides"],
+          recommendedDestinations: ["Amalfi Coast", "Dubai", "St. Barts"],
+          tips: ["Leverage concierge access", "Travel shoulder season"],
+          image: "images/archetypes/luxe-seeker.jpg",
+          imageAlt: "Luxury hotel view"
+        },
+        {
+          id: "budgetBackpacker",
+          name: "Budget Backpacker",
+          slug: "budget-backpacker",
+          url: "https://kiortravel.com/archetypes/budget-backpacker",
+          description: "You maximize experiences per dollar with flexible, resourceful itineraries.",
+          traits: ["Adaptable", "Resourceful", "Curious"],
+          values: ["Value", "Spontaneity", "Community"],
+          interests: ["Hostels", "Street food", "Public transport"],
+          recommendedDestinations: ["Hanoi", "Oaxaca", "Sofia"],
+          tips: ["Travel off-peak", "Use overnight buses/trains"],
+          image: "images/archetypes/budget-backpacker.jpg",
+          imageAlt: "Backpacker at a hostel common room"
+        },
+        {
+          id: "natureGuardian",
+          name: "Nature Guardian",
+          slug: "nature-guardian",
+          url: "https://kiortravel.com/archetypes/nature-guardian",
+          description: "You protect and preserve while exploring—sustainable travel that honors the natural world.",
+          traits: ["Conscious", "Protective", "Connected"],
+          values: ["Conservation", "Respect", "Balance"],
+          interests: ["Eco-lodges", "Volunteer programs", "Wildlife watching"],
+          recommendedDestinations: ["Costa Rica", "New Zealand", "Galapagos"],
+          tips: ["Choose certified eco-accommodations", "Leave no trace principles"],
+          image: "images/archetypes/nature-guardian.jpg",
+          imageAlt: "Traveler observing wildlife respectfully"
+        },
+        {
+          id: "foodieAdventurer",
+          name: "Foodie Adventurer",
+          slug: "foodie-adventurer",
+          url: "https://kiortravel.com/archetypes/foodie-adventurer",
+          description: "You explore cultures through their cuisines—every meal is a journey of discovery.",
+          traits: ["Curious", "Adventurous", "Appreciative"],
+          values: ["Authenticity", "Tradition", "Innovation"],
+          interests: ["Cooking classes", "Food markets", "Local restaurants"],
+          recommendedDestinations: ["Bangkok", "Lyon", "Lima"],
+          tips: ["Book food tours early", "Learn basic food vocabulary"],
+          image: "images/archetypes/foodie-adventurer.jpg",
+          imageAlt: "Traveler sampling local street food"
+        },
+        {
+          id: "historyBuff",
+          name: "History Buff",
+          slug: "history-buff",
+          url: "https://kiortravel.com/archetypes/history-buff",
+          description: "You travel through time, connecting past and present through stories and artifacts.",
+          traits: ["Analytical", "Curious", "Respectful"],
+          values: ["Knowledge", "Context", "Preservation"],
+          interests: ["Historical sites", "Archaeological tours", "Museums"],
+          recommendedDestinations: ["Rome", "Athens", "Petra"],
+          tips: ["Read up before visiting", "Hire knowledgeable guides"],
+          image: "images/archetypes/history-buff.jpg",
+          imageAlt: "Traveler exploring ancient ruins"
+        },
+        {
+          id: "wellnessWanderer",
+          name: "Wellness Wanderer",
+          slug: "wellness-wanderer",
+          url: "https://kiortravel.com/archetypes/wellness-wanderer",
+          description: "You prioritize health and wellbeing while traveling—mindful movement and holistic experiences.",
+          traits: ["Health-conscious", "Balanced", "Self-aware"],
+          values: ["Wellness", "Balance", "Growth"],
+          interests: ["Yoga retreats", "Spa experiences", "Healthy cuisine"],
+          recommendedDestinations: ["Bali", "Switzerland", "Thailand"],
+          tips: ["Pack workout gear", "Research wellness facilities"],
+          image: "images/archetypes/wellness-wanderer.jpg",
+          imageAlt: "Traveler doing yoga in nature"
+        },
+        {
+          id: "photographerExplorer",
+          name: "Photographer Explorer",
+          slug: "photographer-explorer",
+          url: "https://kiortravel.com/archetypes/photographer-explorer",
+          description: "You capture moments and tell stories through your lens—every destination is a canvas.",
+          traits: ["Creative", "Patient", "Observant"],
+          values: ["Beauty", "Storytelling", "Preservation"],
+          interests: ["Landscape photography", "Street photography", "Cultural portraits"],
+          recommendedDestinations: ["Iceland", "Morocco", "Japan"],
+          tips: ["Research golden hour times", "Respect local photography customs"],
+          image: "images/archetypes/photographer-explorer.jpg",
+          imageAlt: "Traveler taking photos of landscape"
+        },
+        {
+          id: "adventureSeeker",
+          name: "Adventure Seeker",
+          slug: "adventure-seeker",
+          url: "https://kiortravel.com/archetypes/adventure-seeker",
+          description: "You crave adrenaline and physical challenges—pushing boundaries and testing limits.",
+          traits: ["Brave", "Energetic", "Determined"],
+          values: ["Challenge", "Achievement", "Excitement"],
+          interests: ["Rock climbing", "White water rafting", "Skydiving"],
+          recommendedDestinations: ["Nepal", "New Zealand", "Switzerland"],
+          tips: ["Check safety certifications", "Train appropriately"],
+          image: "images/archetypes/adventure-seeker.jpg",
+          imageAlt: "Traveler rock climbing"
+        },
+        {
+          id: "digitalNomad",
+          name: "Digital Nomad",
+          slug: "digital-nomad",
+          url: "https://kiortravel.com/archetypes/digital-nomad",
+          description: "You work from anywhere, blending productivity with exploration—global offices and local experiences.",
+          traits: ["Adaptable", "Productive", "Connected"],
+          values: ["Freedom", "Efficiency", "Balance"],
+          interests: ["Co-working spaces", "Local cafes", "Reliable wifi"],
+          recommendedDestinations: ["Chiang Mai", "Lisbon", "Mexico City"],
+          tips: ["Research visa requirements", "Join digital nomad communities"],
+          image: "images/archetypes/digital-nomad.jpg",
+          imageAlt: "Traveler working on laptop in café"
+        }
+      ];
+      
+      // =========================
+      // QUIZ LOGIC & SCORING
+      // =========================
+      const quizLogic = {
+        // Age range
+        ageRange: {
+          0: { culturalConnoisseur: 1, urbanAesthete: 2, socialConnector: 3 },
+          1: { culturalConnoisseur: 2, urbanAesthete: 3, socialConnector: 2, adventureSeeker: 1 },
+          2: { culturalConnoisseur: 3, soulfulNomad: 2, luxeSeeker: 2, mindfulMinimalist: 1 },
+          3: { soulfulNomad: 3, luxeSeeker: 3, culturalConnoisseur: 2, wellnessWanderer: 1 },
+          4: { soulfulNomad: 3, wellnessWanderer: 2, culturalConnoisseur: 2, mindfulMinimalist: 1 },
+          5: { soulfulNomad: 3, wellnessWanderer: 3, mindfulMinimalist: 2, culturalConnoisseur: 1 }
+        },
+        
+        // Personality type (scale 1-10)
+        personalityType: {
+          1: { mindfulMinimalist: 3, soulfulNomad: 2, natureGuardian: 1 },
+          2: { mindfulMinimalist: 3, soulfulNomad: 2, natureGuardian: 1 },
+          3: { mindfulMinimalist: 2, soulfulNomad: 2, natureGuardian: 1 },
+          4: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 },
+          5: { soulfulNomad: 1, mindfulMinimalist: 1, socialConnector: 1 },
+          6: { socialConnector: 1, urbanAesthete: 1, foodieAdventurer: 1 },
+          7: { socialConnector: 2, urbanAesthete: 2, foodieAdventurer: 1 },
+          8: { socialConnector: 2, urbanAesthete: 2, foodieAdventurer: 2 },
+          9: { socialConnector: 3, urbanAesthete: 2, foodieAdventurer: 2 },
+          10: { socialConnector: 3, urbanAesthete: 3, foodieAdventurer: 2 }
+        },
+        
+        // Languages (multiselect)
+        languages: {
+          0: { culturalConnoisseur: 2, historyBuff: 1 }, // Arabic
+          1: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Bengali
+          2: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Cantonese
+          3: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Dutch
+          4: { socialConnector: 1, digitalNomad: 1 }, // English
+          5: { culturalConnoisseur: 2, historyBuff: 1 }, // Farsi
+          6: { culturalConnoisseur: 2, luxeSeeker: 1 }, // French
+          7: { culturalConnoisseur: 2, mindfulMinimalist: 1 }, // German
+          8: { culturalConnoisseur: 2, historyBuff: 1 }, // Greek
+          9: { culturalConnoisseur: 1, natureGuardian: 1 }, // Hausa
+          10: { culturalConnoisseur: 2, historyBuff: 1 }, // Hebrew
+          11: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Hindi
+          12: { culturalConnoisseur: 1, natureGuardian: 1 }, // Igbo
+          13: { culturalConnoisseur: 2, foodieAdventurer: 2 }, // Italian
+          14: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Japanese
+          15: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Korean
+          16: { culturalConnoisseur: 2, urbanAesthete: 1 }, // Mandarin
+          17: { culturalConnoisseur: 2, foodieAdventurer: 1 }, // Portuguese
+          18: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Punjabi
+          19: { culturalConnoisseur: 2, historyBuff: 1 }, // Russian
+          20: { culturalConnoisseur: 2, foodieAdventurer: 1 }, // Spanish
+          21: { culturalConnoisseur: 1, natureGuardian: 1 }, // Swahili
+          22: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Tagalog
+          23: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Thai
+          24: { culturalConnoisseur: 2, historyBuff: 1 }, // Turkish
+          25: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Urdu
+          26: { culturalConnoisseur: 1, foodieAdventurer: 1 }, // Vietnamese
+          27: { culturalConnoisseur: 1, natureGuardian: 1 }, // Yoruba
+          28: { culturalConnoisseur: 1, socialConnector: 1 } // Other
+        },
+        
+        // Relationship status
+        relationshipStatus: {
+          0: { mindfulMinimalist: 2, soulfulNomad: 1, socialConnector: -1 },
+          1: { socialConnector: 3, urbanAesthete: 2, foodieAdventurer: 1 },
+          2: { soulfulNomad: 2, mindfulMinimalist: 1, socialConnector: 1 },
+          3: { luxeSeeker: 2, soulfulNomad: 1, mindfulMinimalist: 1 },
+          4: { socialConnector: 2, urbanAesthete: 1, foodieAdventurer: 1 },
+          5: { soulfulNomad: 2, mindfulMinimalist: 1, natureGuardian: 1 },
+          6: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 },
+          7: { culturalConnoisseur: 1, socialConnector: 1, foodieAdventurer: 1 }
+        },
+        
+        // Important factors for meeting people
+        meetingFactors: {
+          0: { socialConnector: 2, culturalConnoisseur: 1 }, // Hometown
+          1: { culturalConnoisseur: 2, socialConnector: 1 }, // Ethnicity
+          2: { luxeSeeker: 2, mindfulMinimalist: -1 }, // Income
+          3: { culturalConnoisseur: 2, socialConnector: 2 }, // Language fluency
+          4: { urbanAesthete: 2, socialConnector: 1 }, // Occupation
+          5: { culturalConnoisseur: 2, soulfulNomad: 1 }, // Religious affiliation
+          6: { socialConnector: 3, urbanAesthete: 2 }, // Preferred social settings
+          7: { socialConnector: 1, mindfulMinimalist: 1 }, // Age
+          8: { socialConnector: 2, mindfulMinimalist: 1 }, // Availability
+          9: { mindfulMinimalist: 1, luxeSeeker: -1 }, // Class
+          10: { culturalConnoisseur: 3, socialConnector: 2 }, // Cultural background
+          11: { culturalConnoisseur: 2, mindfulMinimalist: 1 }, // Education level
+          12: { socialConnector: 1, mindfulMinimalist: 1 }, // Gender identity
+          13: { socialConnector: 2, adventureSeeker: 1 }, // Hobbies
+          14: { soulfulNomad: 2, mindfulMinimalist: 2 }, // Moral values
+          15: { socialConnector: 2, urbanAesthete: 1 }, // Music taste
+          16: { culturalConnoisseur: 1, mindfulMinimalist: 1 }, // Political affiliation
+          17: { socialConnector: 3, foodieAdventurer: 1 }, // Sense of humor
+          18: { socialConnector: 1, mindfulMinimalist: 1 }, // Sexual orientation
+          19: { socialConnector: 1, mindfulMinimalist: -1 } // Substance use
+        },
+        
+        // Humor importance
+        humorImportance: {
+          0: { socialConnector: 3, foodieAdventurer: 2, urbanAesthete: 1 },
+          1: { socialConnector: 2, foodieAdventurer: 1, urbanAesthete: 1 },
+          2: { mindfulMinimalist: 1, soulfulNomad: 1, natureGuardian: 1 },
+          3: { mindfulMinimalist: 2, soulfulNomad: 1, natureGuardian: 1 }
+        }
+      };
+      
+      // =========================
+      // QUIZ QUESTIONS
+      // =========================
+      const questions = [
+        {
+          id: "intro",
+          type: "intro",
+          title: "Discover your Traveler Archetype",
+          intro: "This isn't your average travel quiz.\n\nOver the next <b>5 - 10 minutes</b>, you'll move through carefully designed questions that uncover your unique traveler archetype...<br><br>Let's get into it.",
+          button: "Let's go →",
+          maxScore: 0
+        },
+        {
+          id: "ageRange",
+          type: "single",
+          label: "Please select your age range",
+          required: true,
+          options: [
+            { badge: "A", text: "24 & Under" },
+            { badge: "B", text: "25 - 30" },
+            { badge: "C", text: "30 - 40" },
+            { badge: "D", text: "40 - 50" },
+            { badge: "E", text: "50 - 60" },
+            { badge: "F", text: "60+" }
+          ],
+          maxScore: 3
+        },
+        {
+          id: "name",
+          type: "text",
+          label: "Please enter your first and last name",
+          required: true,
+          maxScore: 0
+        },
+        {
+          id: "personalityType",
+          type: "scale",
+          label: "What is your personality type?",
+          required: true,
+          min: 1,
+          max: 10,
+          leftLabel: "Introvert",
+          midLabel: "Ambivert",
+          rightLabel: "Extravert",
+          maxScore: 3
+        },
+        {
+          id: "languages",
+          type: "multiselect",
+          label: "What languages do you speak? Select all that may apply.",
+          required: true,
+          options: [
+            "Arabic", "Bengali", "Cantonese", "Dutch", "English", "Farsi", "French", "German",
+            "Greek", "Hausa", "Hebrew", "Hindi", "Igbo", "Italian", "Japanese", "Korean",
+            "Mandarin", "Portuguese", "Punjabi", "Russian", "Spanish", "Swahili", "Tagalog",
+            "Thai", "Turkish", "Urdu", "Vietnamese", "Yoruba", "Other"
+          ],
+          maxScore: 6
+        },
+        {
+          id: "relationshipStatus",
+          type: "select",
+          label: "What is your current relationship status?",
+          required: true,
+          helper: "Understanding your relationship status allows us to develop more intentional recommendations.",
+          options: [
+            "Single - Not Looking", "Single - Looking", "In a relationship", "Married",
+            "In an open relationship", "Widowed", "Divorced", "Other"
+          ],
+          maxScore: 3
+        },
+        {
+          id: "meetingFactors",
+          type: "tag-multiselect",
+          label: "What factors are most important to you when meeting new people? Select all that may apply.",
+          required: true,
+          options: [
+            { text: "Hometown", color: "option-orange" },
+            { text: "Ethnicity", color: "option-purple" },
+            { text: "Income", color: "option-yellow" },
+            { text: "Language fluency", color: "option-yellow" },
+            { text: "Occupation", color: "option-purple" },
+            { text: "Religious affiliation", color: "option-orange" },
+            { text: "Preferred social settings", color: "option-green" },
+            { text: "Age", color: "option-pink" },
+            { text: "Availability", color: "option-yellow" },
+            { text: "Class", color: "option-yellow" },
+            { text: "Cultural background", color: "option-green" },
+            { text: "Education level", color: "option-blue" },
+            { text: "Gender identity", color: "option-pink" },
+            { text: "Hobbies", color: "option-blue" },
+            { text: "Moral values", color: "option-green" },
+            { text: "Music taste", color: "option-blue" },
+            { text: "Political affiliation", color: "option-purple" },
+            { text: "Sense of humor", color: "option-orange" },
+            { text: "Sexual orientation", color: "option-yellow" },
+            { text: "Substance use", color: "option-green" }
+          ],
+          maxScore: 9
+        },
+        {
+          id: "humorImportance",
+          type: "single",
+          label: "How important to you is... Humor",
+          required: true,
+          options: [
+            { badge: "A", text: "A good sense of humor is essential" },
+            { badge: "B", text: "I like laughing occasionally" },
+            { badge: "C", text: "I don't mind people with no sense of humor" },
+            { badge: "D", text: "I don't find much funny" }
+          ],
+          maxScore: 3
+        }
+      ];
+      
+      // =========================
+      // INTERNATIONALIZATION
+      // =========================
+      const i18n = {
+        en: {
+          startQuiz: "Start Quiz",
+          next: "Next",
+          back: "Back",
+          loading: "Calculating your results...",
+          resultsTitle: "Your Travel Archetype Results",
+          mainArchetype: "Your Main Archetype",
+          secondaryArchetypes: "Secondary Archetypes",
+          viewDetails: "View Details",
+          shareResults: "Share Your Results",
+          emailResults: "Email Me My Results",
+          retakeQuiz: "Retake Quiz",
+          thankYou: "Thank you for completing the quiz!",
+          communityCount: "people share your archetype"
+        },
+        es: {
+          startQuiz: "Comenzar Quiz",
+          next: "Siguiente",
+          back: "Atrás",
+          loading: "Calculando tus resultados...",
+          resultsTitle: "Tus Resultados de Arquetipo de Viaje",
+          mainArchetype: "Tu Arquetipo Principal",
+          secondaryArchetypes: "Arquetipos Secundarios",
+          viewDetails: "Ver Detalles",
+          shareResults: "Compartir Tus Resultados",
+          emailResults: "Enviar Mis Resultados por Email",
+          retakeQuiz: "Repetir Quiz",
+          thankYou: "¡Gracias por completar el quiz!",
+          communityCount: "personas comparten tu arquetipo"
+        },
+        fr: {
+          startQuiz: "Commencer le Quiz",
+          next: "Suivant",
+          back: "Retour",
+          loading: "Calcul de vos résultats...",
+          resultsTitle: "Vos Résultats d'Archetype de Voyage",
+          mainArchetype: "Votre Archetype Principal",
+          secondaryArchetypes: "Archetypes Secondaires",
+          viewDetails: "Voir les Détails",
+          shareResults: "Partager Vos Résultats",
+          emailResults: "M'envoyer Mes Résultats par Email",
+          retakeQuiz: "Refaire le Quiz",
+          thankYou: "Merci d'avoir complété le quiz !",
+          communityCount: "personnes partagent votre archetype"
+        }
+      };
+      
+      // =========================
+      // APP CONFIGURATION
+      // =========================
+      const appConfig = {
+        currentLanguage: 'en',
+        maxSelections: 5,
+        animationDuration: 300,
+        saveProgress: true,
+        showCommunityCount: true
+      };
+      
+      // =========================
+      // QUIZ STATE
+      // =========================
+      let currentStep = 0;
+      let answers = {};
+      let archetypeScores = {};
+      
+      // =========================
+      // HELPER FUNCTIONS
+      // =========================
+      function renderProgress(step, total) {
+        if (questions[step].type === "intro") return "";
+        const percent = Math.round((step / (total - 1)) * 100);
+        return `
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar" style="width:${percent}%;"></div>
+            <div class="quiz-progress-label">${percent}% complete</div>
+          </div>
+        `;
+      }
+      
+      function calculateArchetypeScores() {
+        // Reset scores
+        archetypes.forEach(archetype => {
+          archetypeScores[archetype.id] = 0;
+        });
+        
+        // Calculate scores based on answers
+        Object.keys(answers).forEach(questionId => {
+          const answer = answers[questionId];
+          const question = questions.find(q => q.id === questionId);
+          
+          if (!question || !quizLogic[questionId]) return;
+          
+          if (Array.isArray(answer)) {
+            // Multiselect questions
+            answer.forEach(optionIndex => {
+              if (quizLogic[questionId][optionIndex]) {
+                Object.keys(quizLogic[questionId][optionIndex]).forEach(archetypeId => {
+                  archetypeScores[archetypeId] += quizLogic[questionId][optionIndex][archetypeId];
+                });
+              }
+            });
+          } else {
+            // Single select questions
+            if (quizLogic[questionId][answer]) {
+              Object.keys(quizLogic[questionId][answer]).forEach(archetypeId => {
+                archetypeScores[archetypeId] += quizLogic[questionId][answer][archetypeId];
+              });
+            }
+          }
+        });
+        
+        // Convert to array and sort
+        return Object.keys(archetypeScores)
+          .map(id => ({ id, score: archetypeScores[id] }))
+          .sort((a, b) => b.score - a.score);
+      }
+      
+      function getResults() {
+        const sortedScores = calculateArchetypeScores();
+        const mainArchetype = archetypes.find(a => a.id === sortedScores[0].id);
+        const secondaryArchetypes = sortedScores.slice(1, 3).map(score => {
+          const archetype = archetypes.find(a => a.id === score.id);
+          const maxPossibleScore = questions.reduce((total, q) => total + q.maxScore, 0);
+          const percentage = Math.round((score.score / maxPossibleScore) * 100);
+          return { ...archetype, percentage };
+        });
+        
+        return { mainArchetype, secondaryArchetypes };
+      }
+      
+      // =========================
+      // MAIN RENDER FUNCTION
+      // =========================
+      function renderQuizStep() {
+        const root = document.getElementById("quiz-root");
+        const step = questions[currentStep];
+        let html = "";
+      
+        // Progress Bar
+        html += renderProgress(currentStep, questions.length);
+      
+        // Back button (not on intro)
+        if (currentStep > 0) {
+          html += `<button class="quiz-back-btn" onclick="goBack()"><span class="arrow">&larr;</span>${i18n[appConfig.currentLanguage].back}</button>`;
+        }
+      
+        // Section cover screens (if type is intro)
+        if (step.type === "intro") {
+          html += `
+            <div class="quiz-card" style="text-align:left;">
+              <h1 class="quiz-label">${step.title}</h1>
+              <div class="quiz-helper" style="margin-bottom:32px;">${step.intro}</div>
+              <button class="quiz-begin-btn" onclick="goNext()">${step.button} <span class="arrow">&rarr;</span></button>
+            </div>
+          `;
+          root.innerHTML = html;
+          return;
+        }
+      
+        // Question card
+        html += `<div class="quiz-card">`;
+      
+        // Title/Label
+        if (step.label) {
+          html += `<div class="quiz-label">${step.label}${
+            step.required ? ' <span style="color:#fff;font-size:1.1em">*</span>' : ""
+          }</div>`;
+        }
+      
+        // Helper/Description
+        if (step.helper) {
+          html += `<div class="quiz-helper">${step.helper}</div>`;
+        }
+      
+        // Input type rendering
+        html += `<div class="quiz-options">`;
+        
+        if (step.type === "single") {
+          step.options.forEach((opt, i) => {
+            const selected = answers[step.id] === i ? "selected" : "";
+            html += `<button class="quiz-option-btn ${selected}" onclick="selectSingle(${i})">
+              <span class="option-badge">${opt.badge}</span> ${opt.text}
+            </button>`;
+          });
+        }
+        
+        if (step.type === "scale") {
+          html += `<div style="display:flex;gap:10px;">`;
+          for (let i = step.min; i <= step.max; i++) {
+            const selected = answers[step.id] === i ? "selected" : "";
+            html += `<button class="quiz-option-btn ${selected}" style="padding:10px 0 10px 0;min-width:38px;" onclick="selectScale(${i})">${i}</button>`;
+          }
+          html += `</div>
+            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:0.98em;opacity:0.8;">
+              <span>${step.leftLabel}</span>
+              ${step.midLabel ? `<span>${step.midLabel}</span>` : ""}
+              <span>${step.rightLabel}</span>
+            </div>`;
+        }
+        
+        if (step.type === "multiselect") {
+          step.options.forEach((opt, i) => {
+            const checked = (answers[step.id] || []).includes(i);
+            html += `<label style="display:flex;align-items:center;gap:10px;font-size:1.08em;margin-bottom:8px;">
+              <input type="checkbox" onchange="toggleMulti(${i})" ${
+              checked ? "checked" : ""
+            } style="accent-color:#f1b94f;width:19px;height:19px;">
+              ${opt}
+            </label>`;
+          });
+        }
+        
+        if (step.type === "select") {
+          html += `<select class="quiz-input" onchange="selectDropdown(this)">
+            <option value="">Select...</option>
+            ${step.options
+              .map(
+                (opt, i) =>
+                  `<option value="${i}" ${
+                    answers[step.id] === i ? "selected" : ""
+                  }>${opt}</option>`
+              )
+              .join("")}
+          </select>`;
+        }
+        
+        if (step.type === "text") {
+          html += `<input class="quiz-input" type="text" value="${
+            answers[step.id] || ""
+          }" 
+            oninput="typeText(this)" placeholder="Type your answer...">`;
+        }
+        
+        if (step.type === "tag-multiselect") {
+          // Tag input at top
+          html += `<div class="quiz-tag-multiselect" id="tag-multiselect">`;
+          const selected = answers[step.id] || [];
+          selected.forEach((idx) => {
+            const tag = step.options[idx];
+            html += `<span class="quiz-tag ${tag.color}">${tag.text}
+              <button class="remove-x" onclick="removeTag(${idx}, event)">&times;</button>
+            </span>`;
+          });
+          html += `</div>`;
+          // All options below, disabled if already chosen
+          step.options.forEach((opt, i) => {
+            const already = selected.includes(i);
+            html += `<button class="quiz-tag ${opt.color}" style="margin-bottom:8px;${
+              already ? "opacity:0.
