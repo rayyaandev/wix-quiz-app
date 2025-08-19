@@ -1,7 +1,7 @@
 // Questions are loaded from constant.js
 
 // --- Quiz State ---
-let currentStep = 0; // 0 = intro, then questions in order
+let currentStep = 43; // 0 = intro, then questions in order
 let answers = {};
 let quizId = null; // Unique identifier for this quiz session
 let currentLanguage = "en"; // Default language
@@ -591,6 +591,14 @@ function showResults() {
         <h2 style="font-size:1.5em;margin-bottom:15px;color:#f1b94f;">${
           mainArchetype.name
         }</h2>
+        <img src="${
+          mainArchetype.image ||
+          (typeof recommendationImages !== "undefined"
+            ? recommendationImages.default
+            : "")
+        }" alt="${
+    mainArchetype.imageAlt || mainArchetype.name
+  }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" />
         
         <!-- Community Count -->
         <div class="community-count-section" style="text-align:center;margin:20px 0;padding:20px;background:rgba(241,185,79,0.1);border:2px solid #f1b94f;border-radius:12px;">
@@ -605,7 +613,17 @@ function showResults() {
         
         <!-- Archetype Overview -->
         <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Archetype Overview</h3>
+          <div class="archetype-overview-icon" style="text-align:center;margin-bottom:10px;">
+            <img src="${
+              mainArchetype.image ||
+              (typeof recommendationImages !== "undefined"
+                ? recommendationImages.default
+                : "")
+            }" alt="${
+    mainArchetype.imageAlt || mainArchetype.name
+  } icon" style="width:200px;height:200px;border-radius:50%;object-fit:cover" />
+          </div>
+          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">About your archetype</h3>
           <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
             mainArchetype.overview
           }</p>
@@ -709,8 +727,20 @@ function showResults() {
           .map(
             (archetype) => `
           <div class="secondary-archetype" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px;margin-bottom:15px;">
-            <h4 style="font-size:1.1em;margin-bottom:10px;color:#f1b94f;">${archetype.name}</h4>
-            <p style="font-size:0.9em;line-height:1.4;color:#e0e0e0;">${archetype.overview}</p>
+            <img src="${
+              archetype.image ||
+              (typeof recommendationImages !== "undefined"
+                ? recommendationImages.default
+                : "")
+            }" alt="${
+              archetype.imageAlt || archetype.name
+            }" style="width:100%;max-height:150px;object-fit:cover;border-radius:8px;margin-bottom:12px;" />
+            <h4 style="font-size:1.1em;margin-bottom:10px;color:#f1b94f;">${
+              archetype.name
+            }</h4>
+            <p style="font-size:0.9em;line-height:1.4;color:#e0e0e0;">${
+              archetype.overview
+            }</p>
           </div>
         `
           )

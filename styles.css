@@ -506,10 +506,8 @@ select:focus {
 
 .archetype-section {
   margin-bottom: 30px;
-  padding: 25px;
+  padding: 10px;
   background: #24114a;
-  border-radius: 12px;
-  border-left: 4px solid #f1b94f;
 }
 
 .archetype-section h3 {
