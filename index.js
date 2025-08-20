@@ -593,20 +593,73 @@ function showResults() {
   ];
 
   document.getElementById("quiz-root").innerHTML = `
-    <div class="quiz-card results-card">
-      <h1 class="quiz-label" style="font-size:1.8em;margin-bottom:25px;">Your Travel Archetype Results</h1>
+    <div class="results-container">
+      <!-- Background Image Section -->
+      <div class="background-image-section">
+        <div class="background-image"></div>
+      </div>
       
-      <!-- Main Archetype -->
-      <div class="main-archetype">
-        <h2 style="font-size:1.5em;margin-bottom:15px;color:#f1b94f;">${
-          mainArchetype.name
-        }</h2>
-        <img src="${
-          mainArchetype.image ||
-          (typeof recommendationImages !== "undefined"
-            ? recommendationImages.default
-            : "")
-        }" alt="${
+      <!-- Main Results Card -->
+      <div class="main-results-card">
+        <h1 class="results-title">Your Results are In!</h1>
+        <div class="results-divider"></div>
+        <h2 class="archetype-label">Your Travel Archetype is:</h2>
+        <h3 class="main-archetype-name">${mainArchetype.name}</h3>
+        <div class="scroll-indicator">
+          <div class="arrow-circle">
+            <span class="arrow">↓</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Closest Matches Section -->
+      <div class="closest-matches-section">
+        <h2 class="closest-matches-title">Your next closest matches</h2>
+        <div class="matches-grid">
+          ${secondaryArchetypes
+            .slice(0, 2)
+            .map(
+              (archetype, index) => `
+            <div class="match-card">
+              <div class="pie-chart">
+                <svg width="120" height="120" viewBox="0 0 120 120">
+                  <!-- Purple segment (large) -->
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#8B5CF6" stroke-width="20" 
+                    stroke-dasharray="314 314" stroke-dashoffset="0"/>
+                  <!-- Blue segment (medium) -->
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#6366F1" stroke-width="20" 
+                    stroke-dasharray="314 314" stroke-dashoffset="78.5"/>
+                  <!-- Yellow segment (small) - represents the percentage -->
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#F1B94F" stroke-width="20" 
+                    stroke-dasharray="314 314" stroke-dashoffset="235.5"/>
+                  <!-- Percentage text -->
+                  <text x="60" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">${secondaryPercentages[index]}%</text>
+                </svg>
+              </div>
+              <h3 class="match-name">${archetype.name}</h3>
+              <button class="learn-more-btn">Learn About Me</button>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+      
+      <!-- Detailed Archetype Information -->
+      <div class="quiz-card results-card">
+        <h1 class="quiz-label" style="font-size:1.8em;margin-bottom:25px;">Your Travel Archetype Results</h1>
+        
+        <!-- Main Archetype -->
+        <div class="main-archetype">
+          <h2 style="font-size:1.5em;margin-bottom:15px;color:#f1b94f;">${
+            mainArchetype.name
+          }</h2>
+          <img src="${
+            mainArchetype.image ||
+            (typeof recommendationImages !== "undefined"
+              ? recommendationImages.default
+              : "")
+          }" alt="${
     mainArchetype.imageAlt || mainArchetype.name
   }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" />
         
