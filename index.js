@@ -582,6 +582,16 @@ function showResults() {
     (sortedArchetypes[0].score / maxScore) * 100
   );
 
+  // Calculate percentages for secondary archetypes
+  const totalScore =
+    sortedArchetypes[0].score +
+    sortedArchetypes[1].score +
+    sortedArchetypes[2].score;
+  const secondaryPercentages = [
+    Math.round((sortedArchetypes[1].score / totalScore) * 100),
+    Math.round((sortedArchetypes[2].score / totalScore) * 100),
+  ];
+
   document.getElementById("quiz-root").innerHTML = `
     <div class="quiz-card results-card">
       <h1 class="quiz-label" style="font-size:1.8em;margin-bottom:25px;">Your Travel Archetype Results</h1>
