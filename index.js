@@ -596,7 +596,15 @@ function showResults() {
     <div class="results-container">
       <!-- Background Image Section -->
       <div class="background-image-section">
-        <div class="background-image"></div>
+        <div class="background-image">
+        <img src="${
+          mainArchetype.image ||
+          (typeof recommendationImages !== "undefined"
+            ? recommendationImages.default
+            : "")
+        }" alt="${
+    mainArchetype.imageAlt || mainArchetype.name
+  }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" /></div>
       </div>
       
       <!-- Main Results Card -->
@@ -647,21 +655,6 @@ function showResults() {
       
       <!-- Detailed Archetype Information -->
       <div class="quiz-card results-card">
-        <h1 class="quiz-label" style="font-size:1.8em;margin-bottom:25px;">Your Travel Archetype Results</h1>
-        
-        <!-- Main Archetype -->
-        <div class="main-archetype">
-          <h2 style="font-size:1.5em;margin-bottom:15px;color:#f1b94f;">${
-            mainArchetype.name
-          }</h2>
-          <img src="${
-            mainArchetype.image ||
-            (typeof recommendationImages !== "undefined"
-              ? recommendationImages.default
-              : "")
-          }" alt="${
-    mainArchetype.imageAlt || mainArchetype.name
-  }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" />
         
         <!-- Community Count -->
         <div class="community-count-section" style="text-align:center;margin:20px 0;padding:20px;background:rgba(241,185,79,0.1);border:2px solid #f1b94f;border-radius:12px;">
@@ -678,7 +671,7 @@ function showResults() {
         <div class="archetype-section" style="margin-bottom:25px;">
           <div class="archetype-overview-icon" style="text-align:center;margin-bottom:10px;">
             <img src="${
-              mainArchetype.image ||
+              mainArchetype.icons ||
               (typeof recommendationImages !== "undefined"
                 ? recommendationImages.default
                 : "")

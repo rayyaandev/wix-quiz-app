@@ -2,7 +2,7 @@
 // IMAGE CONFIGURATION
 // =========================
 const archetypeImages = {
-  culturalConnoisseur: "images/image1.jpg",
+  culturalConnoisseur: "images/Cultural Connoisseur/main.jpg",
   soulfulNomad: "images/image2.jpg",
   wildExplorer: "images/image3.jpg",
   luxeSeeker: "images/image4.jpg",
@@ -17,6 +17,26 @@ const archetypeImages = {
   hedonist: "images/image1.jpg",
   comfortTraveler: "images/image2.jpg",
   local: "images/image3.jpg",
+};
+
+const archetypeIcons = {
+  culturalConnoisseur: "images/Cultural Connoisseur/Icon.png",
+  soulfulNomad: "images/Soulful Nomad/Icon.png",
+  wildExplorer: "images/image3.jpg",
+  luxeSeeker: "images/Luxe Seeker/Icon.png",
+  socialButterfly: "images/social butterfly/Icon.png",
+  mindfulMinimalist: "images/mindful minimalist/Icon.png",
+  familyConnector: "images/family connector/Icon.png",
+  romanticEscapist: "images/Romantic Escapist/Icon.png",
+  creativeMaverick: "images/Creative Maverick/Icon.png",
+  academicAdventurer: "images/Academic Adventurer/Icon.png",
+  holisticRebalancer: "images/Holistic Rebalancer/Icon.png",
+  hybridNomad: "images/The Hybrid Nomad/Icon.png",
+  hedonist: "images/Hedonist/Icon.png",
+  comfortTraveler: "images/Comfort Traveler/Icon.png",
+  local: "images/The Local/Icon.png",
+  // Default fallback
+  default: "images/image6.jpg",
 };
 
 // Centralized recommendation image configuration

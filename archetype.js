@@ -64,6 +64,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.culturalConnoisseur,
+    icons: archetypeIcons.culturalConnoisseur,
     imageAlt: "Traveler appreciating museum art",
   },
   {
@@ -130,6 +131,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.soulfulNomad,
+    icons: archetypeIcons.soulfulNomad,
     imageAlt: "Traveler meditating in nature",
   },
   {
@@ -182,6 +184,8 @@ const archetypes = [
       },
     ],
     image: archetypeImages.wildExplorer,
+    icons: archetypeIcons.wildExplorer,
+
     imageAlt: "Traveler on a remote mountain ridge",
   },
   {
@@ -239,6 +243,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.luxeSeeker,
+    icons: archetypeIcons.luxeSeeker,
     imageAlt: "Luxury hotel view",
   },
   {
@@ -298,6 +303,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.socialButterfly,
+    icons: archetypeIcons.socialButterfly,
     imageAlt: "Traveler in a stylish urban café",
   },
   {
@@ -352,6 +358,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.mindfulMinimalist,
+    icons: archetypeIcons.mindfulMinimalist,
     imageAlt: "Traveler with minimal backpack",
   },
   {
@@ -480,6 +487,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.romanticEscapist,
+    icons: archetypeIcons.romanticEscapist,
     imageAlt: "Romantic sunset travel moment",
   },
   {
@@ -540,6 +548,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.creativeMaverick,
+    icons: archetypeIcons.creativeMaverick,
     imageAlt: "Creative traveler sketching urban scene",
   },
   {
@@ -593,6 +602,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.academicAdventurer,
+    icons: archetypeIcons.academicAdventurer,
     imageAlt: "Academic traveler studying historical site",
   },
   {
@@ -650,6 +660,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.holisticRebalancer,
+    icons: archetypeIcons.holisticRebalancer,
     imageAlt: "Traveler practicing wellness in nature",
   },
   {
@@ -714,6 +725,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.hybridNomad,
+    icons: archetypeIcons.hybridNomad,
     imageAlt: "Digital nomad working remotely",
   },
   {
@@ -768,6 +780,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.hedonist,
+    icons: archetypeIcons.hedonist,
     imageAlt: "Hedonist enjoying vibrant nightlife",
   },
   {
@@ -822,6 +835,7 @@ const archetypes = [
       },
     ],
     image: archetypeImages.comfortTraveler,
+    icons: archetypeIcons.comfortTraveler,
     imageAlt: "Comfort traveler relaxing at resort",
   },
   {
