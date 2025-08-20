@@ -593,7 +593,7 @@ function showResults() {
   ];
 
   document.getElementById("quiz-root").innerHTML = `
-    <div class="results-container">
+    <div class="results-card">
       <!-- Background Image Section -->
       <div class="background-image-section">
         <div class="background-image">
@@ -654,7 +654,7 @@ function showResults() {
       </div>
       
       <!-- Detailed Archetype Information -->
-      <div class="quiz-card results-card">
+      <div class="detailed-info-section">
         
         <!-- Community Count -->
         <div class="community-count-section" style="text-align:center;margin:20px 0;padding:20px;background:rgba(241,185,79,0.1);border:2px solid #f1b94f;border-radius:12px;">
@@ -693,58 +693,78 @@ function showResults() {
           }</p>
         </div>
         
-        <!-- Personality -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Personality</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            mainArchetype.personality
-          }</p>
-        </div>
-        
-        <!-- Essence -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Essence</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            mainArchetype.essence
-          }</p>
-        </div>
-        
-        <!-- Values -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Values</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            Array.isArray(mainArchetype.values)
-              ? mainArchetype.values.join(", ")
-              : mainArchetype.values
-          }</p>
-        </div>
-        
-        <!-- Interests -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Interests</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            Array.isArray(mainArchetype.interests)
-              ? mainArchetype.interests.join(", ")
-              : mainArchetype.interests
-          }</p>
-        </div>
-        
-        <!-- Experiences -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Experiences</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            Array.isArray(mainArchetype.experiences)
-              ? mainArchetype.experiences.join(", ")
-              : mainArchetype.experiences
-          }</p>
-        </div>
-        
-        <!-- Recommended Destinations -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Recommended Destinations</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${mainArchetype.recommendedDestinations.join(
-            ", "
-          )}</p>
+        <!-- Archetype Information Cards -->
+        <div class="archetype-cards-section">
+          <h3 style="font-size:1.3em;margin-bottom:25px;color:#f1b94f;text-align:center;">About Your Archetype</h3>
+          <div class="archetype-cards-grid">
+            <!-- Personality Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/personality.png" alt="Personality" />
+              </div>
+              <h4 class="card-title">Personality</h4>
+              <p class="card-description">${mainArchetype.personality}</p>
+            </div>
+            
+            <!-- Essence Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/essence.png" alt="Essence" />
+              </div>
+              <h4 class="card-title">Essence</h4>
+              <p class="card-description">${mainArchetype.essence}</p>
+            </div>
+            
+            <!-- Values Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/values.png" alt="Values" />
+              </div>
+              <h4 class="card-title">Values</h4>
+              <p class="card-description">${
+                Array.isArray(mainArchetype.values)
+                  ? mainArchetype.values.join(", ")
+                  : mainArchetype.values
+              }</p>
+            </div>
+            
+            <!-- Interests Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/interests.png" alt="Interests" />
+              </div>
+              <h4 class="card-title">Interests</h4>
+              <p class="card-description">${
+                Array.isArray(mainArchetype.interests)
+                  ? mainArchetype.interests.join(", ")
+                  : mainArchetype.interests
+              }</p>
+            </div>
+            
+            <!-- Experiences Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/experiences.png" alt="Experiences" />
+              </div>
+              <h4 class="card-title">Experiences</h4>
+              <p class="card-description">${
+                Array.isArray(mainArchetype.experiences)
+                  ? mainArchetype.experiences.join(", ")
+                  : mainArchetype.experiences
+              }</p>
+            </div>
+            
+            <!-- Recommended Destinations Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/recommended-destinations.png" alt="Recommended Destinations" />
+              </div>
+              <h4 class="card-title">Recommended Destinations</h4>
+              <p class="card-description">${mainArchetype.recommendedDestinations.join(
+                ", "
+              )}</p>
+            </div>
+          </div>
         </div>
         
         <!-- How to Travel Better -->
