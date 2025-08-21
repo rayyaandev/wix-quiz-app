@@ -1,7 +1,7 @@
 // Questions are loaded from constant.js
 
 // --- Quiz State ---
-let currentStep = 43; // 0 = intro, then questions in order
+let currentStep = 0; // 0 = intro, then questions in order
 let answers = {};
 let quizId = null; // Unique identifier for this quiz session
 let currentLanguage = "en"; // Default language
@@ -234,7 +234,8 @@ function renderQuizStep() {
     <div class="quiz-card" style="text-align:left;">
       <h1 class="quiz-label">${step.title}</h1>
       <div class="quiz-helper" style="margin-bottom:32px;">${step.intro}</div>
-      <button class="quiz-begin-btn" onclick="goNext()">${step.button}</button>
+     <!-- <button class="quiz-begin-btn" onclick="goNext()">${step.button}</button> -->
+      <button class="quiz-begin-btn" onclick="confirmAndSend()">${step.button}</button>
     </div>
   `;
     root.innerHTML = html;
@@ -566,6 +567,7 @@ function calculateArchetypeScores() {
 }
 
 // --- Results Display ---
+
 function showResults() {
   const scores = calculateArchetypeScores();
   const sortedArchetypes = Object.keys(scores)
@@ -593,14 +595,10 @@ function showResults() {
   ];
 
   document.getElementById("quiz-root").innerHTML = `
-    <div class="quiz-card results-card">
-      <h1 class="quiz-label" style="font-size:1.8em;margin-bottom:25px;">Your Travel Archetype Results</h1>
-      
-      <!-- Main Archetype -->
-      <div class="main-archetype">
-        <h2 style="font-size:1.5em;margin-bottom:15px;color:#f1b94f;">${
-          mainArchetype.name
-        }</h2>
+    <div class="results-card">
+      <!-- Background Image Section -->
+      <div class="background-image-section">
+        <div class="background-image">
         <img src="${
           mainArchetype.image ||
           (typeof recommendationImages !== "undefined"
@@ -608,7 +606,57 @@ function showResults() {
             : "")
         }" alt="${
     mainArchetype.imageAlt || mainArchetype.name
-  }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" />
+  }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" /></div>
+      </div>
+      
+      <!-- Main Results Card -->
+      <div class="main-results-card">
+        <h1 class="results-title">Your Results are In!</h1>
+        <div class="results-divider"></div>
+        <h2 class="archetype-label">Your Travel Archetype is:</h2>
+        <h3 class="main-archetype-name">${mainArchetype.name}</h3>
+        <div class="scroll-indicator">
+          <div class="arrow-circle">
+            <span class="arrow">↓</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Closest Matches Section -->
+      <div class="closest-matches-section">
+        <h2 class="closest-matches-title">Your next closest matches</h2>
+        <div class="matches-grid">
+          ${secondaryArchetypes
+            .slice(0, 2)
+            .map(
+              (archetype, index) => `
+            <div class="match-card">
+              <div class="pie-chart">
+                <svg width="120" height="120" viewBox="0 0 120 120">
+                  <!-- Purple segment (large) -->
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#8B5CF6" stroke-width="20" 
+                    stroke-dasharray="314 314" stroke-dashoffset="0"/>
+                  <!-- Blue segment (medium) -->
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#6366F1" stroke-width="20" 
+                    stroke-dasharray="314 314" stroke-dashoffset="78.5"/>
+                  <!-- Yellow segment (small) - represents the percentage -->
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#F1B94F" stroke-width="20" 
+                    stroke-dasharray="314 314" stroke-dashoffset="235.5"/>
+                  <!-- Percentage text -->
+                  <text x="60" y="65" text-anchor="middle" fill="white" font-size="12" font-weight="bold">${secondaryPercentages[index]}%</text>
+                </svg>
+              </div>
+              <h3 class="match-name">${archetype.name}</h3>
+              <button class="learn-more-btn">Learn About Me</button>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+      
+      <!-- Detailed Archetype Information -->
+      <div class="detailed-info-section">
         
         <!-- Community Count -->
         <div class="community-count-section" style="text-align:center;margin:20px 0;padding:20px;background:rgba(241,185,79,0.1);border:2px solid #f1b94f;border-radius:12px;">
@@ -625,7 +673,7 @@ function showResults() {
         <div class="archetype-section" style="margin-bottom:25px;">
           <div class="archetype-overview-icon" style="text-align:center;margin-bottom:10px;">
             <img src="${
-              mainArchetype.image ||
+              mainArchetype.icons ||
               (typeof recommendationImages !== "undefined"
                 ? recommendationImages.default
                 : "")
@@ -647,68 +695,112 @@ function showResults() {
           }</p>
         </div>
         
-        <!-- Personality -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Personality</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            mainArchetype.personality
-          }</p>
-        </div>
-        
-        <!-- Essence -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Essence</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            mainArchetype.essence
-          }</p>
-        </div>
-        
-        <!-- Values -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Values</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            Array.isArray(mainArchetype.values)
-              ? mainArchetype.values.join(", ")
-              : mainArchetype.values
-          }</p>
-        </div>
-        
-        <!-- Interests -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Interests</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            Array.isArray(mainArchetype.interests)
-              ? mainArchetype.interests.join(", ")
-              : mainArchetype.interests
-          }</p>
-        </div>
-        
-        <!-- Experiences -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Experiences</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
-            Array.isArray(mainArchetype.experiences)
-              ? mainArchetype.experiences.join(", ")
-              : mainArchetype.experiences
-          }</p>
-        </div>
-        
-        <!-- Recommended Destinations -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">Recommended Destinations</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${mainArchetype.recommendedDestinations.join(
-            ", "
-          )}</p>
+        <!-- Archetype Information Cards -->
+        <div class="archetype-cards-section">
+          <h3 style="font-size:1.3em;margin-bottom:25px;color:#f1b94f;text-align:center;">About Your Archetype</h3>
+          <div class="archetype-cards-grid">
+            <!-- Personality Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/personality.png" alt="Personality" />
+              </div>
+              <h4 class="card-title">Personality</h4>
+              <p class="card-description">${mainArchetype.personality}</p>
+            </div>
+            
+            <!-- Essence Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/essence.png" alt="Essence" />
+              </div>
+              <h4 class="card-title">Essence</h4>
+              <p class="card-description">${mainArchetype.essence}</p>
+            </div>
+            
+            <!-- Values Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/values.png" alt="Values" />
+              </div>
+              <h4 class="card-title">Values</h4>
+              <p class="card-description">${
+                Array.isArray(mainArchetype.values)
+                  ? mainArchetype.values.join(", ")
+                  : mainArchetype.values
+              }</p>
+            </div>
+            
+            <!-- Interests Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/interests.png" alt="Interests" />
+              </div>
+              <h4 class="card-title">Interests</h4>
+              <p class="card-description">${
+                Array.isArray(mainArchetype.interests)
+                  ? mainArchetype.interests.join(", ")
+                  : mainArchetype.interests
+              }</p>
+            </div>
+            
+            <!-- Experiences Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/experiences.png" alt="Experiences" />
+              </div>
+              <h4 class="card-title">Experiences</h4>
+              <p class="card-description">${
+                Array.isArray(mainArchetype.experiences)
+                  ? mainArchetype.experiences.join(", ")
+                  : mainArchetype.experiences
+              }</p>
+            </div>
+            
+            <!-- Recommended Destinations Card -->
+            <div class="archetype-card">
+              <div class="card-icon">
+                <img src="images/Page Icons/recommended-destinations.png" alt="Recommended Destinations" />
+              </div>
+              <h4 class="card-title">Recommended Destinations</h4>
+              <p class="card-description">${mainArchetype.recommendedDestinations.join(
+                ", "
+              )}</p>
+            </div>
+          </div>
         </div>
         
         <!-- How to Travel Better -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">How to travel better as a ${mainArchetype.name.toLowerCase()}</h3>
-          <ul class="travel-tips" style="font-size:0.95em;line-height:1.5;color:#e0e0e0;padding-left:20px;">
-            ${mainArchetype.howToTravelBetter
-              .map((tip) => `<li style="margin-bottom:8px;">${tip}</li>`)
-              .join("")}
-          </ul>
+        <div class="travel-better-section">
+          <div class="travel-better-background">
+            <img src="${
+              mainArchetype.travelBetter ||
+              (typeof archeTypeTravelBetter !== "undefined"
+                ? archeTypeTravelBetter.default
+                : "")
+            }" alt="Travel background for ${mainArchetype.name}" />
+          </div>
+          <div class="travel-better-overlay">
+            <h3 class="travel-better-title">How to travel better as a ${
+              mainArchetype.name
+            }:</h3>
+                          <div class="travel-tips-container">
+                ${mainArchetype.howToTravelBetter
+                  .map(
+                    (tip, index) => `
+                    <div class="travel-tip-item">
+                      <h4 class="tip-heading">${tip.title || tip}</h4>
+                      <p class="tip-description">${tip.description || tip}</p>
+                      ${
+                        index < mainArchetype.howToTravelBetter.length - 1
+                          ? '<div class="tip-separator"></div>'
+                          : ""
+                      }
+                    </div>
+                  `
+                  )
+                  .join("")}
+              </div>
+          </div>
         </div>
         
         <!-- Our Recommendations -->
@@ -718,10 +810,11 @@ function showResults() {
             ${mainArchetype.ourRecommendations
               .map(
                 (rec) => `
-              <div class="recommendation-card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+              <div class="recommendation-card" style="border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <img src="${rec.image}" alt="${rec.title}" class="recommendation-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:15px;">
                 <h4 style="font-size:1.1em;margin-bottom:10px;color:#f1b94f;">${rec.title}</h4>
                 <p class="recommendation-description" style="font-size:0.9em;line-height:1.4;color:#ccc;">${rec.description}</p>
+                <a href="${rec.link}" target="_blank" class="recommendation-btn" style="display:inline-block;background:#f1b94f;color:#11072e;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.2s ease;margin-top:15px;">Learn More</a>
               </div>
             `
               )
@@ -730,7 +823,17 @@ function showResults() {
         </div>
       </div>
       
-      <!-- Secondary Archetypes -->
+      <!-- Membership Waitlist Section -->
+      <div class="membership-waitlist-section">
+        <div class="waitlist-content">
+          <p class="waitlist-text">
+            Now that you've unveiled your Travel Archetype, join our membership waitlist and discover how we can design a journey crafted entirely for you.
+          </p>
+          <button class="waitlist-btn" onclick="joinWaitlist()">Join the Waitlist</button>
+        </div>
+      </div>
+      
+      <!-- Secondary Archetypes
       <div class="secondary-archetypes" style="margin-bottom:30px;">
         <h3 style="font-size:1.3em;margin-bottom:20px;color:#f1b94f;">Secondary Archetypes</h3>
         ${secondaryArchetypes
@@ -756,7 +859,7 @@ function showResults() {
           )
           .join("")}
       </div>
-      
+       -->
       <!-- Social Sharing -->
       <div class="social-sharing" style="margin-bottom:30px;">
         <h3 style="font-size:1.3em;margin-bottom:20px;color:#f1b94f;">Share Your Results</h3>
@@ -785,6 +888,74 @@ function showResults() {
       <button onclick="retakeQuiz()" class="retake-btn" style="background:#f1b94f;color:#000;border:none;padding:15px 30px;border-radius:8px;font-size:1em;font-weight:bold;cursor:pointer;transition:all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Retake Quiz</button>
     </div>
   `;
+}
+
+// --- Preview helpers for testing results without completing quiz ---
+function previewResultsFor(mainIdOrName) {
+  try {
+    const target =
+      archetypes.find((a) => a.id === mainIdOrName) ||
+      archetypes.find(
+        (a) =>
+          a.name && a.name.toLowerCase() === String(mainIdOrName).toLowerCase()
+      ) ||
+      archetypes[0];
+
+    const others = archetypes.filter((x) => x.id !== target.id);
+    const originalCalc = window.calculateArchetypeScores;
+    window.calculateArchetypeScores = function () {
+      const scores = {};
+      archetypes.forEach((x) => (scores[x.id] = 1));
+      scores[target.id] = 100;
+      if (others[0]) scores[others[0].id] = 60;
+      if (others[1]) scores[others[1].id] = 40;
+      return scores;
+    };
+    showResults();
+    window.calculateArchetypeScores = originalCalc;
+  } catch (e) {
+    console.error("previewResultsFor failed", e);
+  }
+}
+
+function previewAllResults() {
+  try {
+    const root = document.getElementById("quiz-root");
+    if (!root) return;
+    const originalCalc = window.calculateArchetypeScores;
+    const blocks = [];
+
+    archetypes.forEach((a) => {
+      const others = archetypes.filter((x) => x.id !== a.id);
+      window.calculateArchetypeScores = function () {
+        const scores = {};
+        archetypes.forEach((x) => (scores[x.id] = 1));
+        scores[a.id] = 100;
+        if (others[0]) scores[others[0].id] = 60;
+        if (others[1]) scores[others[1].id] = 40;
+        return scores;
+      };
+      showResults();
+      blocks.push(
+        `<div style="margin:40px auto;max-width:1200px;">${root.innerHTML}</div>`
+      );
+    });
+
+    window.calculateArchetypeScores = originalCalc;
+    root.innerHTML = blocks.join("");
+  } catch (e) {
+    console.error("previewAllResults failed", e);
+  }
+}
+
+// --- Membership Functions ---
+function joinWaitlist() {
+  // You can customize this function to handle waitlist signup
+  alert(
+    "Thank you for your interest! We'll be in touch soon about our membership program."
+  );
+  // Alternative: redirect to a waitlist form
+  // window.open("https://your-waitlist-form.com", "_blank");
 }
 
 // --- Social Sharing Functions ---
@@ -1247,11 +1418,109 @@ function addSliderStyles() {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     addSliderStyles();
+    const params = new URLSearchParams(window.location.search);
+    const previewAll = params.get("previewAll");
+    const one = params.get("archetype");
+    if (previewAll === "1") {
+      renderHeader();
+      previewAllResults();
+      return;
+    }
+    if (one) {
+      renderHeader();
+      previewResultsFor(one);
+      return;
+    }
     renderQuizStep();
     renderHeader(); // Render header after DOM is ready
   });
 } else {
   addSliderStyles();
-  renderQuizStep();
-  renderHeader(); // Render header after DOM is ready
+  const params = new URLSearchParams(window.location.search);
+  const previewAll = params.get("previewAll");
+  const one = params.get("archetype");
+  if (previewAll === "1") {
+    renderHeader();
+    previewAllResults();
+  } else if (one) {
+    renderHeader();
+    previewResultsFor(one);
+  } else {
+    renderQuizStep();
+    renderHeader(); // Render header after DOM is ready
+  }
+}
+
+function getEmailAnswer() {
+  const idx = questions.findIndex((q) => q.id === "email");
+  const value = idx >= 0 ? (answers[idx] || "").trim() : "";
+  return value;
+}
+
+function absolutizeImageUrls(html, base = location.origin) {
+  // makes images/... and /images/... absolute for email clients
+  return html
+    .replace(
+      /src="\/?(images\/[^"']+)"/g,
+      (m, p1) => `src="${base.replace(/\/$/, "")}/${p1}"`
+    )
+    .replace(
+      /url\(\/?(images\/[^)"']+)\)/g,
+      (m, p1) => `url(${base.replace(/\/$/, "")}/${p1})`
+    );
+}
+
+async function sendResultsEmail() {
+  const toEmail = getEmailAnswer();
+  if (!toEmail) {
+    alert("Please provide your email in the quiz.");
+    return;
+  }
+
+  // Capture the rendered results HTML
+  const card = document.querySelector(".results-card");
+  if (!card) return;
+
+  const clone = card.cloneNode(true);
+  clone.querySelectorAll("button").forEach((b) => b.remove()); // optional: strip buttons
+  let htmlContent = clone.outerHTML;
+  htmlContent = absolutizeImageUrls(
+    htmlContent,
+    window.PUBLIC_BASE_URL || location.origin
+  );
+
+  const res = await fetch("/.netlify/functions/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      toEmail,
+      subject: "Your Travel Archetype Results",
+      htmlContent,
+    }),
+  });
+
+  if (!res.ok) {
+    const msg = await res.text();
+    console.error("Email failed:", msg);
+    alert("Failed to send your results email. Please try again.");
+  }
+}
+
+async function confirmAndSend() {
+  try {
+    // First render results so the DOM exists to capture
+    showResults();
+    // Then send the email (next tick to ensure DOM is in place)
+    setTimeout(async () => {
+      try {
+        await sendResultsEmail();
+        // Optional: show success message
+        console.log("Results email sent successfully!");
+      } catch (e) {
+        console.error("Failed to send email:", e);
+      }
+    }, 100); // increased timeout for safety
+  } catch (e) {
+    console.error("Error in confirmAndSend:", e);
+  }
 }
