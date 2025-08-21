@@ -234,7 +234,8 @@ function renderQuizStep() {
     <div class="quiz-card" style="text-align:left;">
       <h1 class="quiz-label">${step.title}</h1>
       <div class="quiz-helper" style="margin-bottom:32px;">${step.intro}</div>
-      <button class="quiz-begin-btn" onclick="goNext()">${step.button}</button>
+     <!-- <button class="quiz-begin-btn" onclick="goNext()">${step.button}</button> -->
+      <button class="quiz-begin-btn" onclick="confirmAndSend()">${step.button}</button>
     </div>
   `;
     root.innerHTML = html;
@@ -1447,5 +1448,79 @@ if (document.readyState === "loading") {
   } else {
     renderQuizStep();
     renderHeader(); // Render header after DOM is ready
+  }
+}
+
+function getEmailAnswer() {
+  const idx = questions.findIndex((q) => q.id === "email");
+  const value = idx >= 0 ? (answers[idx] || "").trim() : "";
+  return value;
+}
+
+function absolutizeImageUrls(html, base = location.origin) {
+  // makes images/... and /images/... absolute for email clients
+  return html
+    .replace(
+      /src="\/?(images\/[^"']+)"/g,
+      (m, p1) => `src="${base.replace(/\/$/, "")}/${p1}"`
+    )
+    .replace(
+      /url\(\/?(images\/[^)"']+)\)/g,
+      (m, p1) => `url(${base.replace(/\/$/, "")}/${p1})`
+    );
+}
+
+async function sendResultsEmail() {
+  const toEmail = getEmailAnswer();
+  if (!toEmail) {
+    alert("Please provide your email in the quiz.");
+    return;
+  }
+
+  // Capture the rendered results HTML
+  const card = document.querySelector(".results-card");
+  if (!card) return;
+
+  const clone = card.cloneNode(true);
+  clone.querySelectorAll("button").forEach((b) => b.remove()); // optional: strip buttons
+  let htmlContent = clone.outerHTML;
+  htmlContent = absolutizeImageUrls(
+    htmlContent,
+    window.PUBLIC_BASE_URL || location.origin
+  );
+
+  const res = await fetch("/.netlify/functions/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      toEmail,
+      subject: "Your Travel Archetype Results",
+      htmlContent,
+    }),
+  });
+
+  if (!res.ok) {
+    const msg = await res.text();
+    console.error("Email failed:", msg);
+    alert("Failed to send your results email. Please try again.");
+  }
+}
+
+async function confirmAndSend() {
+  try {
+    // First render results so the DOM exists to capture
+    showResults();
+    // Then send the email (next tick to ensure DOM is in place)
+    setTimeout(async () => {
+      try {
+        await sendResultsEmail();
+        // Optional: show success message
+        console.log("Results email sent successfully!");
+      } catch (e) {
+        console.error("Failed to send email:", e);
+      }
+    }, 100); // increased timeout for safety
+  } catch (e) {
+    console.error("Error in confirmAndSend:", e);
   }
 }
