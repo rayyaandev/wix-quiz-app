@@ -427,7 +427,8 @@ const archetypes = [
         link: "https://example.com/memory-maker",
       },
     ],
-    image: recommendationImages.familyVacation,
+    image: archetypeImages.familyConnector,
+    icons: archetypeIcons.familyConnector,
     imageAlt: "Family enjoying travel together",
   },
   {
@@ -726,13 +727,6 @@ const archetypes = [
         image: recommendationImages.hybridNomad2,
         link: "https://example.com/barbados-nomad",
       },
-      {
-        title: "Explore How Modern Nomads Keep Rooted on the Road",
-        description:
-          "Delve into the lives of three digital nomads who've built routines across continents. Learn their daily rituals, mindset shifts, packing hacks, and community‑building strategies to craft continuity without a permanent address. [Read now →]",
-        image: recommendationImages.hybridNomad3,
-        link: "https://example.com/modern-nomads",
-      },
     ],
     image: archetypeImages.hybridNomad,
     icons: archetypeIcons.hybridNomad,
@@ -913,7 +907,8 @@ const archetypes = [
         link: "https://example.com/kior-membership",
       },
     ],
-    image: recommendationImages.default,
+    image: archetypeImages.local,
+    icons: archetypeIcons.local,
     imageAlt: "Comfort traveler relaxing at resort",
   },
 ];

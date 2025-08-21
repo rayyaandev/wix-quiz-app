@@ -5,10 +5,10 @@ const archetypeImages = {
   culturalConnoisseur: "images/Cultural Connoisseur/main.jpg",
   soulfulNomad: "images/Soulful Nomad/main.jpg",
   wildExplorer: "images/The Wild Explorer/main.jpg",
-  luxeSeeker: "images/Luxe Seeker/Icon.png",
+  luxeSeeker: "images/Luxe Seeker/main.jpg",
   socialButterfly: "images/social butterfly/main.jpg",
   mindfulMinimalist: "images/mindful minimalist/main.jpg",
-  familyConnector: "images/family connector/main.jpg",
+  familyConnector: "images/Family Connector/main.jpg",
   romanticEscapist: "images/Romantic Escapist/main.jpg",
   creativeMaverick: "images/Creative Maverick/main.jpg",
   academicAdventurer: "images/Academic Adventurer/main.jpg",
@@ -28,7 +28,7 @@ const archetypeIcons = {
   luxeSeeker: "images/Luxe Seeker/Icon.png",
   socialButterfly: "images/social butterfly/Icon.png",
   mindfulMinimalist: "images/mindful minimalist/Icon.png",
-  familyConnector: "images/family connector/Icon.png",
+  familyConnector: "images/Family Connector/Icon.png",
   romanticEscapist: "images/Romantic Escapist/Icon.png",
   creativeMaverick: "images/Creative Maverick/Icon.png",
   academicAdventurer: "images/Academic Adventurer/Icon.png",
@@ -70,13 +70,12 @@ const recommendationImages = {
 
   // Mindful Minimalist
   mindfulMinimalist1: "images/mindful minimalist/r1.jpg",
-  mindfulMinimalist2: "images/mindful minimalist/r2.jpg",
-  mindfulMinimalist3: "images/mindful minimalist/r3.jpg",
+  mindfulMinimalist2: "images/mindful minimalist/r2.jpeg",
 
   // Family Connector
-  familyConnector1: "images/family connector/r1.jpg",
-  familyConnector2: "images/family connector/r2.jpg",
-  familyConnector3: "images/family connector/r3.jpg",
+  familyConnector1: "images/Family Connector/r1.jpeg",
+  familyConnector2: "images/Family Connector/r2.jpg",
+  familyConnector3: "images/Family Connector/r3.jpg",
 
   // Romantic Escapist
   romanticEscapist1: "images/Romantic Escapist/r1.jpg",
@@ -101,7 +100,6 @@ const recommendationImages = {
   // Hybrid Nomad
   hybridNomad1: "images/The Hybrid Nomad/r1.jpg",
   hybridNomad2: "images/The Hybrid Nomad/r2.jpg",
-  hybridNomad3: "images/The Hybrid Nomad/r3.jpg",
 
   // Hedonist
   hedonist1: "images/Hedonist/r1.jpg",
@@ -109,12 +107,12 @@ const recommendationImages = {
   hedonist3: "images/Hedonist/r3.jpg",
 
   // Comfort Traveler
-  comfortTraveler1: "images/Comfort Traveler/r1.jpg",
+  comfortTraveler1: "images/Comfort Traveler/r1.jpeg",
   comfortTraveler2: "images/Comfort Traveler/r2.jpg",
   comfortTraveler3: "images/Comfort Traveler/r3.jpg",
 
   // The Local
-  local1: "images/The Local/r1.jpg",
+  local1: "images/The Local/r1.jpeg",
   local2: "images/The Local/r2.jpg",
   local3: "images/The Local/r3.jpg",
 };
@@ -123,10 +121,10 @@ const archeTypeTravelBetter = {
   culturalConnoisseur: "images/Cultural Connoisseur/travel.jpg",
   soulfulNomad: "images/Soulful Nomad/travel.jpg",
   wildExplorer: "images/The Wild Explorer/travel.jpg",
-  luxeSeeker: "images/Luxe Seeker/travel.jpg",
+  luxeSeeker: "images/Luxe Seeker/travel.jpeg",
   socialButterfly: "images/social butterfly/travel.jpg",
   mindfulMinimalist: "images/mindful minimalist/travel.jpg",
-  familyConnector: "images/family connector/travel.jpg",
+  familyConnector: "images/Family Connector/travel.jpg",
   romanticEscapist: "images/Romantic Escapist/travel.jpg",
   creativeMaverick: "images/Creative Maverick/Icon.png",
   academicAdventurer: "images/Academic Adventurer/travel.jpg",
