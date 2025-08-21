@@ -809,7 +809,7 @@ function showResults() {
             ${mainArchetype.ourRecommendations
               .map(
                 (rec) => `
-              <div class="recommendation-card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+              <div class="recommendation-card" style="border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <img src="${rec.image}" alt="${rec.title}" class="recommendation-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:15px;">
                 <h4 style="font-size:1.1em;margin-bottom:10px;color:#f1b94f;">${rec.title}</h4>
                 <p class="recommendation-description" style="font-size:0.9em;line-height:1.4;color:#ccc;">${rec.description}</p>
@@ -821,7 +821,7 @@ function showResults() {
         </div>
       </div>
       
-      <!-- Secondary Archetypes -->
+      <!-- Secondary Archetypes
       <div class="secondary-archetypes" style="margin-bottom:30px;">
         <h3 style="font-size:1.3em;margin-bottom:20px;color:#f1b94f;">Secondary Archetypes</h3>
         ${secondaryArchetypes
@@ -847,7 +847,7 @@ function showResults() {
           )
           .join("")}
       </div>
-      
+       -->
       <!-- Social Sharing -->
       <div class="social-sharing" style="margin-bottom:30px;">
         <h3 style="font-size:1.3em;margin-bottom:20px;color:#f1b94f;">Share Your Results</h3>

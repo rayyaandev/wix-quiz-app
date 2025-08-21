@@ -41,6 +41,11 @@ const archetypeIcons = {
 
 // Centralized recommendation image configuration
 const recommendationImages = {
+  //culturalConnoisseur
+  culturalConnoisseurr1: "images/Cultural Connoisseur/r1.jpg",
+  culturalConnoisseurr2: "images/Cultural Connoisseur/r2.jpg",
+  culturalConnoisseurr3: "images/Cultural Connoisseur/r3.jpg",
+
   // Cultural & Educational
   culturalTour: "images/image1.jpg",
   bookClub: "images/image2.jpg",
