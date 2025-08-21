@@ -45,21 +45,21 @@ const archetypes = [
           "<strong>Oaxaca Textiles & Traditions</strong> – 6-Day Itinerary",
         description:
           "Explore Zapotec weaving villages, mezcal distilleries, and family-run culinary workshops with local hosts.",
-        image: archetypeImages.culturalConnoisseur,
+        image: recommendationImages.culturalConnoisseur1,
         link: "https://example.com/lorem-tour",
       },
       {
         title: "<strong>Kior Travel Book Club Membership</strong>",
         description:
           "Monthly cultural reads delivered to your inbox, paired with live discussions and immersive experiences.",
-        image: recommendationImages.bookClub,
+        image: recommendationImages.culturalConnoisseur2,
         link: "https://example.com/dolor-membership",
       },
       {
         title: "<strong>Travel Journal Prompts</strong>",
         description:
           "Start thinking deeper during your travels with our free set of guided journal prompts.",
-        image: recommendationImages.journalPrompts,
+        image: recommendationImages.culturalConnoisseur3,
         link: "https://example.com/journal",
       },
     ],
@@ -113,21 +113,21 @@ const archetypes = [
           "<strong>Honduras Rainforest Reconnection</strong> – 7-Day Journey",
         description:
           "Traverse the Pico Bonito cloud forest, swim in jungle waterfalls, and unwind in eco-lodges that honor the rhythms of the land. Includes guided meditations and local plant wisdom sessions.",
-        image: recommendationImages.rainforestJourney,
+        image: recommendationImages.soulfulNomad1,
         link: "https://example.com/retreat",
       },
       {
         title: "<strong>Travel Journal Prompts</strong>",
         description:
           "Start thinking deeper during your travels with our free set of guided journal prompts.",
-        image: recommendationImages.journalPrompts,
+        image: recommendationImages.soulfulNomad2,
         link: "https://example.com/retreat",
       },
       {
         title: "<strong>Global Soundscape Playlists</strong>",
         description:
           "Our curated sound journey to anchor your travel days in perfectly, with local tones and field recordings from around the world.",
-        image: recommendationImages.soundscapePlaylists,
+        image: recommendationImages.soulfulNomad3,
         link: "https://example.com/retreat",
       },
     ],
@@ -174,14 +174,14 @@ const archetypes = [
         title: "Iceland Glacial Traverse – 8-Day Expedition",
         description:
           "Glacier hikes, volcanic springs, ice cave descents, and wild-camp nights under auroras. Led by local mountain guides with deep roots in Norse terrain.",
-        image: recommendationImages.glacialExpedition,
+        image: recommendationImages.wildExplorer1,
         link: "https://example.com/trek",
       },
       {
         title: "The Concrete Jungle: NYC Fitness & Culture Experience",
         description:
           "Push your limits on this five-day group experience through New York City. Blending fitness, fun, and brotherhood in the heart of the city's rawest playground. Designed for men who move with purpose and live for the challenge.",
-        image: recommendationImages.nycExperience,
+        image: recommendationImages.wildExplorer2,
         link: "https://example.com/trek",
       },
     ],
@@ -234,14 +234,14 @@ const archetypes = [
         title: "Private Membership by Kior Travel",
         description:
           "<strong>Your tastes, your timeline.</strong> Our travel memberships include full journey design and concierge support ensuring perfection without effort.",
-        image: recommendationImages.privateMembership,
+        image: recommendationImages.luxeSeeker1,
         link: "https://example.com/luxury",
       },
       {
         title: "Exclusive Cultural Dinner Series",
         description:
           "Join intimate, invitation-only experiences hosted all over the globe featuring acclaimed local chefs, performers, and cultural curators.",
-        image: recommendationImages.culturalDinner,
+        image: recommendationImages.luxeSeeker2,
         link: "https://example.com/luxury",
       },
     ],
@@ -294,15 +294,15 @@ const archetypes = [
       {
         title: "Exclusive Cultural Dinner Series",
         description:
-          "ather around the table at one of our immersive, invitation-only high-energy dinners that blend storytelling, community, culture, and cuisine.",
-        image: recommendationImages.culturalDinner,
+          "Gather around the table at one of our immersive, invitation-only high-energy dinners that blend storytelling, community, culture, and cuisine.",
+        image: recommendationImages.socialButterfly1,
         link: "https://example.com/urban",
       },
       {
         title: "Kior Travel Moodboard",
         description:
           "Create your own visual archive of travel moments. Upload your favorite trip photos and use the board to dream, plan, and inspire your next getaway.",
-        image: recommendationImages.moodboard,
+        image: recommendationImages.socialButterfly2,
         link: "https://example.com/urban",
       },
     ],
@@ -351,14 +351,14 @@ const archetypes = [
         title: "St. Lucia Rainforest Escape – 5-Day Experience",
         description:
           "Live simply and purposefully on this Caribbean escape. Stay in a coastal eco-lodge, hike the Pitons at sunrise, join a reef cleanup, and cook with locals using garden-grown ingredients.",
-        image: recommendationImages.minimalistKit,
+        image: recommendationImages.mindfulMinimalist1,
         link: "https://example.com/minimalist",
       },
       {
         title: "Global Explorer Program",
         description:
           "Join our member-only rewards initiative that celebrates thoughtful travel. Earn points every time you support local, independently owned businesses and redeem them for exclusive experiences, dining perks, and upgrades around the globe.",
-        image: recommendationImages.minimalistKit,
+        image: recommendationImages.mindfulMinimalist2,
         link: "https://example.com/minimalist",
       },
     ],
@@ -409,21 +409,21 @@ const archetypes = [
         title: "Barbados Family Moments Itinerary – 6 Days",
         description:
           "Create sun-soaked memories on this slow-paced island escape. Swim with turtles, picnic on golden beaches, explore the magical Animal Flower Cave, and enjoy family-friendly cultural experiences designed for all ages.",
-        image: recommendationImages.familyVacation,
+        image: recommendationImages.familyConnector1,
         link: "https://example.com/barbados-family",
       },
       {
         title: "Kior Kids",
         description:
           "Whether it's a quiet dinner, a solo swim, or simply a nap, our childcare recommendation service, Kior Kids connects you with trusted local, vetted partners to ensure your little ones are cared for, engaged, and entertained while you recharge.",
-        image: recommendationImages.childcare,
+        image: recommendationImages.familyConnector2,
         link: "https://example.com/kior-kids",
       },
       {
         title: "The Memory Maker Add-On",
         description:
           "Whether you're traveling solo, with family, or friends, our photographer add-on turns fleeting moments into lasting keepsakes. Choose from a single-session highlight shoot or multi-day coverage ideal for birthdays, group' trips, honeymoons, and family reunions. Includes digital copies of edited photos and optional custom photo books.",
-        image: recommendationImages.photography,
+        image: recommendationImages.familyConnector3,
         link: "https://example.com/memory-maker",
       },
     ],
@@ -474,21 +474,21 @@ const archetypes = [
         title: "Madeira Dreamscape – 6-Day Escape",
         description:
           "Follow flower-lined levadas, dine cliffside at golden hour, soak in volcanic thermal springs, and explore misty mountain trails that stir the soul. An idyllic, sensory journey for those seeking a poetic getaway.",
-        image: recommendationImages.default,
+        image: recommendationImages.romanticEscapist1,
         link: "https://example.com/madeira-dreamscape",
       },
       {
         title: "Couples & Solo Romance Add-On",
         description:
           "Surprise picnic setups, handwritten notes, floral deliveries, and spontaneous serenades carefully crafted for those chasing the poetic side of travel.",
-        image: recommendationImages.default,
+        image: recommendationImages.romanticEscapist2,
         link: "https://example.com/romance-addon",
       },
       {
         title: "Kior Travel Moodboard",
         description:
           "Archive the feelings. Use your personal travel moodboard to collect photos, poems, playlists, and notes that keep your favorite moments alive.",
-        image: recommendationImages.moodboard,
+        image: recommendationImages.romanticEscapist3,
         link: "https://example.com/moodboard",
       },
     ],
@@ -536,21 +536,21 @@ const archetypes = [
         title: "Copenhagen Design + Expression – 5-Day Creative Trip",
         description:
           "A curated itinerary through the city's indie art scene, modern design houses, and poetic public spaces. Includes private workshops, boutique stays, and local artist encounters.",
-        image: recommendationImages.default,
+        image: recommendationImages.creativeMaverick1,
         link: "https://example.com/copenhagen-creative",
       },
       {
         title: "Self-Guided Urban Sketch Tour",
         description:
           "Discover a new city through an artist's lens. This mapped experience leads you through offbeat neighborhoods, striking architecture, and hidden creative corners. Complete with suggested sketch spots and reflection prompts.",
-        image: recommendationImages.default,
+        image: recommendationImages.creativeMaverick2,
         link: "https://example.com/urban-sketch",
       },
       {
         title: "Places I've Been: Visual Travel Archive",
         description:
           "Turn your past journeys into art. Use our digital moodboard tool to upload snapshots, sketches, and moments from your travels creating a personal archive of inspiration you can revisit or build future trips from.",
-        image: recommendationImages.default,
+        image: recommendationImages.creativeMaverick3,
         link: "https://example.com/visual-archive",
       },
     ],
@@ -591,21 +591,21 @@ const archetypes = [
         title: "Bath: Layers of Empire – 4-Day Immersive Tour",
         description:
           "Explore Roman baths, Georgian design, and literary landmarks through guided walks, architectural talks, and local storytelling. Perfect for history lovers who value beauty and context.",
-        image: recommendationImages.default,
+        image: recommendationImages.academicAdventurer1,
         link: "https://example.com/bath-empire",
       },
       {
         title: "The Hidden Histories You Were Never Taught",
         description:
           "Explore overlooked civilizations, scholars, and systems from across the globe in this editorial for the intellectually curious. [Read now →]",
-        image: recommendationImages.default,
+        image: recommendationImages.academicAdventurer2,
         link: "https://example.com/hidden-histories",
       },
       {
         title: "Places I've Been: Visual Travel Archive",
         description:
           "Use our digital moodboard tool to visually document historically significant places you've visited. Reflect on recurring patterns, architecture, and culture across regions.",
-        image: recommendationImages.default,
+        image: recommendationImages.academicAdventurer3,
         link: "https://example.com/visual-archive",
       },
     ],
@@ -657,14 +657,14 @@ const archetypes = [
         title: "Belize Rainforest Reset – 5-Day Itinerary",
         description:
           "Recharge in the heart of the jungle with sunrise yoga, river swims, and guided walks through medicinal plant trails. Slow down with hammock journaling, natural spa rituals, and starlit dinners surrounded by fireflies. A grounded escape for those seeking clarity, balance, and deep natural connection.",
-        image: recommendationImages.default,
+        image: recommendationImages.holisticRebalancer1,
         link: "https://example.com/belize-rainforest",
       },
       {
         title: "Hidden Traditions of Global Wellness",
         description:
           "Take a moment to explore some of the world's lesser-known healing practices. We uncover the secrets of Australia's unique fauna, the nutritional wisdom of the Pacific Islands, and offer a glimpse into how underrepresented cultures restore balance through nature, rhythm, and ancestral knowledge. [Read the article →]",
-        image: recommendationImages.default,
+        image: recommendationImages.holisticRebalancer2,
         link: "https://example.com/global-wellness",
       },
     ],
@@ -716,21 +716,21 @@ const archetypes = [
         title: "Live Before You Leap: Relocation Tours",
         description:
           "Ever find yourself daydreaming about a place you've never called home? We'll start supporting you before you even decide to take the plunge. Our Relocation Tours pair you with neighborhood guides, walk you through hand‑picked properties, and unlock the hidden gems locals love, so you can taste daily life firsthand, without any big commitments.",
-        image: recommendationImages.default,
+        image: recommendationImages.hybridNomad1,
         link: "https://example.com/relocation-tours",
       },
       {
         title: "Barbados Slow Nomad Experience – 1‑Month Stay & Explore",
         description:
           "Settle into island life for four weeks of true slow travel: work‑friendly co‑working spaces, culture‑rich island excursions, and plenty of time to sync with the rhythms of remote living in one of the Caribbean's most welcoming digital‑nomad hubs.",
-        image: recommendationImages.default,
+        image: recommendationImages.hybridNomad2,
         link: "https://example.com/barbados-nomad",
       },
       {
         title: "Explore How Modern Nomads Keep Rooted on the Road",
         description:
           "Delve into the lives of three digital nomads who've built routines across continents. Learn their daily rituals, mindset shifts, packing hacks, and community‑building strategies to craft continuity without a permanent address. [Read now →]",
-        image: recommendationImages.default,
+        image: recommendationImages.hybridNomad3,
         link: "https://example.com/modern-nomads",
       },
     ],
@@ -779,14 +779,14 @@ const archetypes = [
         title: "Round‑the‑World Cocktails: Recipes & Rendezvous",
         description:
           "Dive into six signature drinks from across the globe you've likely never heard of before. From Trinidad sours to Goa's Feni Fizz, we uncover each cocktail's origin story, the best bars to sip them in person, and the recipes to recreate the magic at home. [Read the article →]",
-        image: recommendationImages.default,
+        image: recommendationImages.hedonist1,
         link: "https://example.com/world-cocktails",
       },
       {
         title: "Private Chef Add‑On",
         description:
           "For nights when you'd rather unwind in your own space, treat yourself to our Private Chef Add‑On. We'll pair you with a top local chef who designs and prepares a fully personalized, destination‑inspired feast. Whether you crave street‑food classics or a Michelin‑level tasting menu, all you need to do is relax. Your chef handles everything from shopping to plating, so you can dine in style without ever leaving your accommodations.",
-        image: recommendationImages.default,
+        image: recommendationImages.hedonist2,
         link: "https://example.com/private-chef",
       },
     ],
@@ -828,21 +828,21 @@ const archetypes = [
         title: "Kior Travel Global Explorer",
         description:
           "Discover local with confidence. Earn rewards each time you enjoy vetted, independently owned cafes, shops, and experiences. Redeem points for perks like priority reservations, guided tours, and seamless upgrades that let you explore the authentic side of every destination without ever feeling out of your element.",
-        image: recommendationImages.default,
+        image: recommendationImages.comfortTraveler1,
         link: "https://example.com/global-explorer",
       },
       {
         title: "Soft‑Landing Arrival Service",
         description:
           "Skip the airport chaos. We'll meet you airside, handle your luggage, whisk you through customs, and drop you at your door with a welcome kit so your first moments feel as smooth as your last at home.",
-        image: recommendationImages.default,
+        image: recommendationImages.comfortTraveler2,
         link: "https://example.com/soft-landing",
       },
       {
         title: "Kior Travel Membership",
         description:
           "Your peace of mind, our priority. Enjoy a fully tailored travel service, every detail handled, every question answered so you can relax completely. From 24/7 concierge support to personalized itineraries built around your favorite comforts, we make every trip effortless and endlessly familiar.",
-        image: recommendationImages.default,
+        image: recommendationImages.comfortTraveler3,
         link: "https://example.com/kior-membership",
       },
     ],
@@ -895,21 +895,21 @@ const archetypes = [
         title: "The Neighbourhood",
         description:
           "A curated series of neighborhood storytellers, street vendors, and artisans sharing the secrets of their corner of the world, celebrating both our differences and shared humanity. Tune in for our latest episode.",
-        image: recommendationImages.default,
+        image: recommendationImages.local1,
         link: "https://example.com/global-explorer",
       },
       {
         title: "Relocation Services",
         description:
           "magine touching down in a new city and finding everything already in place. That’s exactly what our nomad and permanent relocation services deliver. We handle every behind‑the‑scenes detail, from home scouting to language assistance, so you don’t have to wrestle with logistics.",
-        image: recommendationImages.default,
+        image: recommendationImages.local2,
         link: "https://example.com/soft-landing",
       },
       {
         title: "Global Explorer Program",
         description:
           "Join our member-only rewards initiative that celebrates thoughtful travel. Earn points every time you support local, independently owned businesses and redeem them for exclusive experiences, dining perks, and upgrades around the globe.",
-        image: recommendationImages.default,
+        image: recommendationImages.local3,
         link: "https://example.com/kior-membership",
       },
     ],

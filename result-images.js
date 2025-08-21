@@ -3,20 +3,22 @@
 // =========================
 const archetypeImages = {
   culturalConnoisseur: "images/Cultural Connoisseur/main.jpg",
-  soulfulNomad: "images/image2.jpg",
-  wildExplorer: "images/image3.jpg",
-  luxeSeeker: "images/image4.jpg",
-  socialButterfly: "images/image5.jpg",
-  mindfulMinimalist: "images/image6.jpg",
-  familyConnector: "images/image1.jpg",
-  romanticEscapist: "images/image2.jpg",
-  creativeMaverick: "images/image3.jpg",
-  academicAdventurer: "images/image4.jpg",
-  holisticRebalancer: "images/image5.jpg",
-  hybridNomad: "images/image6.jpg",
-  hedonist: "images/image1.jpg",
-  comfortTraveler: "images/image2.jpg",
-  local: "images/image3.jpg",
+  soulfulNomad: "images/Soulful Nomad/main.jpg",
+  wildExplorer: "images/The Wild Explorer/main.jpg",
+  luxeSeeker: "images/Luxe Seeker/Icon.png",
+  socialButterfly: "images/social butterfly/main.jpg",
+  mindfulMinimalist: "images/mindful minimalist/main.jpg",
+  familyConnector: "images/family connector/main.jpg",
+  romanticEscapist: "images/Romantic Escapist/main.jpg",
+  creativeMaverick: "images/Creative Maverick/main.jpg",
+  academicAdventurer: "images/Academic Adventurer/main.jpg",
+  holisticRebalancer: "images/Holistic Rebalancer/main.jpg",
+  hybridNomad: "images/The Hybrid Nomad/main.jpg",
+  hedonist: "images/Hedonist/main.jpg",
+  comfortTraveler: "images/Comfort Traveler/main.jpg",
+  local: "images/The Local/main.jpg",
+  // Default fallback
+  default: "images/image6.jpg",
 };
 
 const archetypeIcons = {
@@ -41,57 +43,80 @@ const archetypeIcons = {
 
 // Centralized recommendation image configuration
 const recommendationImages = {
-  //culturalConnoisseur
-  culturalConnoisseurr1: "images/Cultural Connoisseur/r1.jpg",
-  culturalConnoisseurr2: "images/Cultural Connoisseur/r2.jpg",
-  culturalConnoisseurr3: "images/Cultural Connoisseur/r3.jpg",
+  // Cultural Connoisseur
+  culturalConnoisseur1: "images/Cultural Connoisseur/r1.jpg",
+  culturalConnoisseur2: "images/Cultural Connoisseur/r2.jpg",
+  culturalConnoisseur3: "images/Cultural Connoisseur/r3.jpg",
 
-  // Cultural & Educational
-  culturalTour: "images/image1.jpg",
-  bookClub: "images/image2.jpg",
-  journalPrompts: "images/image3.jpg",
+  // Soulful Nomad
+  soulfulNomad1: "images/Soulful Nomad/r1.jpg",
+  soulfulNomad2: "images/Soulful Nomad/r2.jpg",
+  soulfulNomad3: "images/Soulful Nomad/r3.jpg",
 
-  // Adventure & Wellness
-  rainforestJourney: "images/image4.jpg",
-  soundscapePlaylists: "images/image5.jpg",
-  glacialExpedition: "images/image6.jpg",
+  // Wild Explorer
+  wildExplorer1: "images/The Wild Explorer/r1.jpg",
+  wildExplorer2: "images/The Wild Explorer/r2.jpg",
+  wildExplorer3: "images/The Wild Explorer/r3.jpg",
 
-  // Luxury & Social
-  privateMembership: "images/image1.jpg",
-  culturalDinner: "images/image2.jpg",
-  moodboard: "images/image3.jpg",
+  // Luxe Seeker
+  luxeSeeker1: "images/Luxe Seeker/r1.jpg",
+  luxeSeeker2: "images/Luxe Seeker/r2.jpg",
+  luxeSeeker3: "images/Luxe Seeker/r3.jpg",
 
-  // Fitness & Urban
-  nycExperience: "images/image4.jpg",
-  minimalistKit: "images/image5.jpg",
+  // Social Butterfly
+  socialButterfly1: "images/social butterfly/r1.jpg",
+  socialButterfly2: "images/social butterfly/r2.jpg",
+  socialButterfly3: "images/social butterfly/r3.jpg",
 
-  // Family & Services
-  familyVacation: "images/image1.jpg",
-  childcare: "images/image2.jpg",
-  photography: "images/image3.jpg",
+  // Mindful Minimalist
+  mindfulMinimalist1: "images/mindful minimalist/r1.jpg",
+  mindfulMinimalist2: "images/mindful minimalist/r2.jpg",
+  mindfulMinimalist3: "images/mindful minimalist/r3.jpg",
 
-  // Romantic & Creative
-  dreamscape: "images/image4.jpg",
-  romanceAddon: "images/image5.jpg",
-  creativeWorkshop: "images/image6.jpg",
+  // Family Connector
+  familyConnector1: "images/family connector/r1.jpg",
+  familyConnector2: "images/family connector/r2.jpg",
+  familyConnector3: "images/family connector/r3.jpg",
 
-  // Academic & Wellness
-  historicalTour: "images/image1.jpg",
-  wellnessRetreat: "images/image2.jpg",
+  // Romantic Escapist
+  romanticEscapist1: "images/Romantic Escapist/r1.jpg",
+  romanticEscapist2: "images/Romantic Escapist/r2.jpg",
+  romanticEscapist3: "images/Romantic Escapist/r3.jpg",
 
-  // Digital Nomad & Hedonist
-  relocationTour: "images/image3.jpg",
-  nomadExperience: "images/image4.jpg",
-  worldCocktails: "images/image5.jpg",
-  privateChef: "images/image6.jpg",
+  // Creative Maverick
+  creativeMaverick1: "images/Creative Maverick/r1.jpg",
+  creativeMaverick2: "images/Creative Maverick/r2.jpg",
+  creativeMaverick3: "images/Creative Maverick/r3.jpg",
 
-  // Comfort & Local
-  globalExplorer: "images/image1.jpg",
-  softLanding: "images/image2.jpg",
-  kiorMembership: "images/image3.jpg",
+  // Academic Adventurer
+  academicAdventurer1: "images/Academic Adventurer/r1.jpg",
+  academicAdventurer2: "images/Academic Adventurer/r2.jpg",
+  academicAdventurer3: "images/Academic Adventurer/r3.jpg",
 
-  // Default fallback
-  default: "images/image6.jpg",
+  // Holistic Rebalancer
+  holisticRebalancer1: "images/Holistic Rebalancer/r1.jpg",
+  holisticRebalancer2: "images/Holistic Rebalancer/r2.jpg",
+  holisticRebalancer3: "images/Holistic Rebalancer/r3.jpg",
+
+  // Hybrid Nomad
+  hybridNomad1: "images/The Hybrid Nomad/r1.jpg",
+  hybridNomad2: "images/The Hybrid Nomad/r2.jpg",
+  hybridNomad3: "images/The Hybrid Nomad/r3.jpg",
+
+  // Hedonist
+  hedonist1: "images/Hedonist/r1.jpg",
+  hedonist2: "images/Hedonist/r2.jpg",
+  hedonist3: "images/Hedonist/r3.jpg",
+
+  // Comfort Traveler
+  comfortTraveler1: "images/Comfort Traveler/r1.jpg",
+  comfortTraveler2: "images/Comfort Traveler/r2.jpg",
+  comfortTraveler3: "images/Comfort Traveler/r3.jpg",
+
+  // The Local
+  local1: "images/The Local/r1.jpg",
+  local2: "images/The Local/r2.jpg",
+  local3: "images/The Local/r3.jpg",
 };
 
 const archeTypeTravelBetter = {
