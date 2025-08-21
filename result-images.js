@@ -22,7 +22,7 @@ const archetypeImages = {
 const archetypeIcons = {
   culturalConnoisseur: "images/Cultural Connoisseur/Icon.png",
   soulfulNomad: "images/Soulful Nomad/Icon.png",
-  wildExplorer: "images/image3.jpg",
+  wildExplorer: "images/The Wild Explorer/Icon.png",
   luxeSeeker: "images/Luxe Seeker/Icon.png",
   socialButterfly: "images/social butterfly/Icon.png",
   mindfulMinimalist: "images/mindful minimalist/Icon.png",
@@ -85,6 +85,26 @@ const recommendationImages = {
   softLanding: "images/image2.jpg",
   kiorMembership: "images/image3.jpg",
 
+  // Default fallback
+  default: "images/image6.jpg",
+};
+
+const archeTypeTravelBetter = {
+  culturalConnoisseur: "images/Cultural Connoisseur/travel.jpg",
+  soulfulNomad: "images/Soulful Nomad/travel.jpg",
+  wildExplorer: "images/The Wild Explorer/travel.jpg",
+  luxeSeeker: "images/Luxe Seeker/travel.jpg",
+  socialButterfly: "images/social butterfly/travel.jpg",
+  mindfulMinimalist: "images/mindful minimalist/travel.jpg",
+  familyConnector: "images/family connector/travel.jpg",
+  romanticEscapist: "images/Romantic Escapist/travel.jpg",
+  creativeMaverick: "images/Creative Maverick/Icon.png",
+  academicAdventurer: "images/Academic Adventurer/travel.jpg",
+  holisticRebalancer: "images/Holistic Rebalancer/travel.jpg",
+  hybridNomad: "images/The Hybrid Nomad/travel.jpg",
+  hedonist: "images/Hedonist/travel.jpg",
+  comfortTraveler: "images/Comfort Traveler/travel.jpg",
+  local: "images/The Local/travel.jpg",
   // Default fallback
   default: "images/image6.jpg",
 };

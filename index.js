@@ -566,6 +566,7 @@ function calculateArchetypeScores() {
 }
 
 // --- Results Display ---
+
 function showResults() {
   const scores = calculateArchetypeScores();
   const sortedArchetypes = Object.keys(scores)
@@ -768,13 +769,37 @@ function showResults() {
         </div>
         
         <!-- How to Travel Better -->
-        <div class="archetype-section" style="margin-bottom:25px;">
-          <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">How to travel better as a ${mainArchetype.name.toLowerCase()}</h3>
-          <ul class="travel-tips" style="font-size:0.95em;line-height:1.5;color:#e0e0e0;padding-left:20px;">
-            ${mainArchetype.howToTravelBetter
-              .map((tip) => `<li style="margin-bottom:8px;">${tip}</li>`)
-              .join("")}
-          </ul>
+        <div class="travel-better-section">
+          <div class="travel-better-background">
+            <img src="${
+              mainArchetype.travelBetter ||
+              (typeof archeTypeTravelBetter !== "undefined"
+                ? archeTypeTravelBetter.default
+                : "")
+            }" alt="Travel background for ${mainArchetype.name}" />
+          </div>
+          <div class="travel-better-overlay">
+            <h3 class="travel-better-title">How to travel better as a ${
+              mainArchetype.name
+            }:</h3>
+                          <div class="travel-tips-container">
+                ${mainArchetype.howToTravelBetter
+                  .map(
+                    (tip, index) => `
+                    <div class="travel-tip-item">
+                      <h4 class="tip-heading">${tip.title || tip}</h4>
+                      <p class="tip-description">${tip.description || tip}</p>
+                      ${
+                        index < mainArchetype.howToTravelBetter.length - 1
+                          ? '<div class="tip-separator"></div>'
+                          : ""
+                      }
+                    </div>
+                  `
+                  )
+                  .join("")}
+              </div>
+          </div>
         </div>
         
         <!-- Our Recommendations -->

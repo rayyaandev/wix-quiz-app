@@ -1114,3 +1114,102 @@ select:focus {
     gap: 15px;
   }
 }
+
+/* Travel Better Section */
+.travel-better-section {
+  position: relative;
+  margin: 40px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.travel-better-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.travel-better-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.2);
+}
+
+.travel-better-overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(247, 247, 246, 0.95);
+  margin: 40px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.travel-better-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #11072e;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.travel-tips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.travel-tip-item {
+  text-align: left;
+}
+
+.tip-heading {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #11072e;
+  margin-bottom: 8px;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.tip-description {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #4a4a4a;
+  margin-bottom: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.tip-separator {
+  height: 1px;
+  background: #d1d5db;
+  margin-top: 25px;
+  width: 100%;
+}
+
+/* Responsive adjustments for travel better section */
+@media (max-width: 768px) {
+  .travel-better-overlay {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .travel-better-title {
+    font-size: 1.2em;
+  }
+
+  .tip-heading {
+    font-size: 1em;
+  }
+
+  .tip-description {
+    font-size: 0.9em;
+  }
+}
