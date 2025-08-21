@@ -813,11 +813,22 @@ function showResults() {
                 <img src="${rec.image}" alt="${rec.title}" class="recommendation-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:15px;">
                 <h4 style="font-size:1.1em;margin-bottom:10px;color:#f1b94f;">${rec.title}</h4>
                 <p class="recommendation-description" style="font-size:0.9em;line-height:1.4;color:#ccc;">${rec.description}</p>
+                <a href="${rec.link}" target="_blank" class="recommendation-btn" style="display:inline-block;background:#f1b94f;color:#11072e;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.2s ease;margin-top:15px;">Learn More</a>
               </div>
             `
               )
               .join("")}
           </div>
+        </div>
+      </div>
+      
+      <!-- Membership Waitlist Section -->
+      <div class="membership-waitlist-section">
+        <div class="waitlist-content">
+          <p class="waitlist-text">
+            Now that you've unveiled your Travel Archetype, join our membership waitlist and discover how we can design a journey crafted entirely for you.
+          </p>
+          <button class="waitlist-btn" onclick="joinWaitlist()">Join the Waitlist</button>
         </div>
       </div>
       
@@ -876,6 +887,16 @@ function showResults() {
       <button onclick="retakeQuiz()" class="retake-btn" style="background:#f1b94f;color:#000;border:none;padding:15px 30px;border-radius:8px;font-size:1em;font-weight:bold;cursor:pointer;transition:all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Retake Quiz</button>
     </div>
   `;
+}
+
+// --- Membership Functions ---
+function joinWaitlist() {
+  // You can customize this function to handle waitlist signup
+  alert(
+    "Thank you for your interest! We'll be in touch soon about our membership program."
+  );
+  // Alternative: redirect to a waitlist form
+  // window.open("https://your-waitlist-form.com", "_blank");
 }
 
 // --- Social Sharing Functions ---
