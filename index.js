@@ -1,7 +1,7 @@
 // Questions are loaded from constant.js
 
 // --- Quiz State ---
-let currentStep = 43; // 0 = intro, then questions in order
+let currentStep = 0; // 0 = intro, then questions in order
 let answers = {};
 let quizId = null; // Unique identifier for this quiz session
 let currentLanguage = "en"; // Default language
