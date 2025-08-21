@@ -1292,3 +1292,12 @@ select:focus {
     font-size: 0.95em;
   }
 }
+
+body:has(.results-card) #quiz-app {
+  width: 100%;
+  max-width: 1200px; /* adjust to taste, e.g. 1400px or 100vw */
+  margin: 0 auto;
+}
+body:has(.results-card) #quiz-header {
+  display: none;
+}

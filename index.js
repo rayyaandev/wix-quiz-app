@@ -889,6 +889,64 @@ function showResults() {
   `;
 }
 
+// --- Preview helpers for testing results without completing quiz ---
+function previewResultsFor(mainIdOrName) {
+  try {
+    const target =
+      archetypes.find((a) => a.id === mainIdOrName) ||
+      archetypes.find(
+        (a) =>
+          a.name && a.name.toLowerCase() === String(mainIdOrName).toLowerCase()
+      ) ||
+      archetypes[0];
+
+    const others = archetypes.filter((x) => x.id !== target.id);
+    const originalCalc = window.calculateArchetypeScores;
+    window.calculateArchetypeScores = function () {
+      const scores = {};
+      archetypes.forEach((x) => (scores[x.id] = 1));
+      scores[target.id] = 100;
+      if (others[0]) scores[others[0].id] = 60;
+      if (others[1]) scores[others[1].id] = 40;
+      return scores;
+    };
+    showResults();
+    window.calculateArchetypeScores = originalCalc;
+  } catch (e) {
+    console.error("previewResultsFor failed", e);
+  }
+}
+
+function previewAllResults() {
+  try {
+    const root = document.getElementById("quiz-root");
+    if (!root) return;
+    const originalCalc = window.calculateArchetypeScores;
+    const blocks = [];
+
+    archetypes.forEach((a) => {
+      const others = archetypes.filter((x) => x.id !== a.id);
+      window.calculateArchetypeScores = function () {
+        const scores = {};
+        archetypes.forEach((x) => (scores[x.id] = 1));
+        scores[a.id] = 100;
+        if (others[0]) scores[others[0].id] = 60;
+        if (others[1]) scores[others[1].id] = 40;
+        return scores;
+      };
+      showResults();
+      blocks.push(
+        `<div style="margin:40px auto;max-width:1200px;">${root.innerHTML}</div>`
+      );
+    });
+
+    window.calculateArchetypeScores = originalCalc;
+    root.innerHTML = blocks.join("");
+  } catch (e) {
+    console.error("previewAllResults failed", e);
+  }
+}
+
 // --- Membership Functions ---
 function joinWaitlist() {
   // You can customize this function to handle waitlist signup
@@ -1359,11 +1417,35 @@ function addSliderStyles() {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     addSliderStyles();
+    const params = new URLSearchParams(window.location.search);
+    const previewAll = params.get("previewAll");
+    const one = params.get("archetype");
+    if (previewAll === "1") {
+      renderHeader();
+      previewAllResults();
+      return;
+    }
+    if (one) {
+      renderHeader();
+      previewResultsFor(one);
+      return;
+    }
     renderQuizStep();
     renderHeader(); // Render header after DOM is ready
   });
 } else {
   addSliderStyles();
-  renderQuizStep();
-  renderHeader(); // Render header after DOM is ready
+  const params = new URLSearchParams(window.location.search);
+  const previewAll = params.get("previewAll");
+  const one = params.get("archetype");
+  if (previewAll === "1") {
+    renderHeader();
+    previewAllResults();
+  } else if (one) {
+    renderHeader();
+    previewResultsFor(one);
+  } else {
+    renderQuizStep();
+    renderHeader(); // Render header after DOM is ready
+  }
 }
