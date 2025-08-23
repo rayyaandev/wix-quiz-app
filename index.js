@@ -35,10 +35,10 @@ function renderHeader() {
 
   header.innerHTML = `
     <nav style="background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);border-bottom:2px solid #f1b94f;padding:10px;position:sticky;top:0;z-index:1000;margin-bottom:10px">
-      <div style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 10px;">
         <!-- Logo/Brand -->
-        <div style="display:flex;align-items:center;gap:15px;">
-          <div style="font-size:1.8em;">🌍</div>
+        <div style="display:flex;align-items:center;gap:4px;">
+          <img src="images/Page Icons/experiences.png" alt="Travel Experiences" style="width:4em;height:4em;object-fit:contain;">
           <div style="font-size:1.4em;font-weight:bold;color:#f1b94f;">
             Travel Archetype Quiz
           </div>
