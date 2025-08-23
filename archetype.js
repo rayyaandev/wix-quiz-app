@@ -35,9 +35,21 @@ const archetypes = [
       "Chicago",
     ],
     howToTravelBetter: [
-      "<strong>Embrace “enough”</strong> Don’t let the search for the right eco-option stall your journey — do your best, not your most.",
-      "<strong>Prioritize purpose over perfection:</strong> Seek moments where giving back and meaningful interaction are part of the plan.",
-      "<strong>Build connection into your itinerary:</strong> From cultural exchange to conservation, explore paths that deepen your impact. [Read our guide to volunteering differently →]",
+      {
+        title: "Embrace “enough”",
+        description:
+          "Don’t let the search for the right eco-option stall your journey — do your best, not your most..",
+      },
+      {
+        title: "Prioritize purpose over perfection",
+        description:
+          "Seek moments where giving back and meaningful interaction are part of the plan.",
+      },
+      {
+        title: "Build connection into your itinerary",
+        description:
+          "From cultural exchange to conservation, explore paths that deepen your impact. [Read our guide to volunteering differently →",
+      },
     ],
     ourRecommendations: [
       {
@@ -102,10 +114,26 @@ const archetypes = [
     ],
     recommendedDestinations: ["Bali", "Sedona", "Ubud", "Rishikesh", "Tulum"],
     howToTravelBetter: [
-      "<strong>Protect your peace</strong>: Not every experience needs to be social or stimulating. Choose environments that mirror your inner calm.",
-      "<strong>Let nature guide your itinerary</strong>: Forests, rivers, mountains and coastlines often hold the answers you're quietly seeking.",
-      "<strong>Travel light, inward and outward</strong>: Release expectations and carry only what truly matters, both physically and emotionally. ",
-      "<strong>Journal your journey</strong>: Reflective writing will help you process, integrate, and stay connected to your intentions. Try our free Soulful Nomad journal prompts to begin.",
+      {
+        title: "Protect your peace",
+        description:
+          "Not every experience needs to be social or stimulating. Choose environments that mirror your inner calm.",
+      },
+      {
+        title: "Let nature guide your itinerary",
+        description:
+          "Forests, rivers, mountains and coastlines often hold the answers you're quietly seeking.",
+      },
+      {
+        title: "Travel light, inward and outward",
+        description:
+          "Release expectations and carry only what truly matters, both physically and emotionally.",
+      },
+      {
+        title: "Journal your journey",
+        description:
+          "Reflective writing will help you process, integrate, and stay connected to your intentions. Try our free Soulful Nomad journal prompts to begin.",
+      },
     ],
     ourRecommendations: [
       {
@@ -164,10 +192,26 @@ const archetypes = [
       "Nepal",
     ],
     howToTravelBetter: [
-      "Train before you board: Build your stamina in advance so you can say yes to the most demanding treks and thrills",
-      "Channel your energy: LNot every trip needs to be packed to the brim. Focus on quality over chaos.",
-      "Stay open to softness: You don’t always need to conquer. Let moments of quiet awe balance the adrenaline.",
-      "Pack for performance, not perfection: Choose gear that helps you push further, mentally and physically.",
+      {
+        title: "Train before you board",
+        description:
+          "Build your stamina in advance so you can say yes to the most demanding treks and thrills",
+      },
+      {
+        title: "Channel your energy",
+        description:
+          "Not every trip needs to be packed to the brim. Focus on quality over chaos.",
+      },
+      {
+        title: "Stay open to softness",
+        description:
+          "You don’t always need to conquer. Let moments of quiet awe balance the adrenaline.",
+      },
+      {
+        title: "Pack for performance, not perfection",
+        description:
+          "Choose gear that helps you push further, mentally and physically.",
+      },
     ],
     ourRecommendations: [
       {
@@ -224,10 +268,26 @@ const archetypes = [
       "Monaco",
     ],
     howToTravelBetter: [
-      "Prioritize meaning, not just indulgence: Elevate your experiences by choosing beauty with soul, not just surface.",
-      "Leave space in your itinerary: True luxury includes time to wander, reflect, and be surprised.",
-      "Balance predictability with privilege: Let your concierge handle the details, but stay open to the spontaneous gems a destination might offer.",
-      "Quality over Big names: Seek out artisans, boutique designers, and heritage-led experiences that blend elegance with authenticity.",
+      {
+        title: "Prioritize meaning, not just indulgence",
+        description:
+          "Elevate your experiences by choosing beauty with soul, not just surface.",
+      },
+      {
+        title: "Leave space in your itinerary",
+        description:
+          "True luxury includes time to wander, reflect, and be surprised.",
+      },
+      {
+        title: "Balance predictability with privilege",
+        description:
+          "Let your concierge handle the details, but stay open to the spontaneous gems a destination might offer.",
+      },
+      {
+        title: "Quality over Big names",
+        description:
+          "Seek out artisans, boutique designers, and heritage-led experiences that blend elegance with authenticity",
+      },
     ],
     ourRecommendations: [
       {
@@ -285,10 +345,26 @@ const archetypes = [
       "Ibiza",
     ],
     howToTravelBetter: [
-      "Don’t skip the solo time: As much as you love a crowd, carving out even small moments alone will help you stay grounded and recharge.",
-      "Say yes, but with intention: Not every invite is worth the energy. Choose connection over chaos.",
-      "Find the culture in the party: Seek out events rooted in local traditions or community vibes, not just the mainstream scene.",
-      "Capture, then curate: Take the photos, then live the moment. Upload your favorite memories to your travel moodboard to reflect, share, and plan your next adventure.",
+      {
+        title: "Don’t skip the solo time",
+        description:
+          "As much as you love a crowd, carving out even small moments alone will help you stay grounded and recharge.",
+      },
+      {
+        title: "Say yes, but with intention",
+        description:
+          "Not every invite is worth the energy. Choose connection over chaos.",
+      },
+      {
+        title: "Find the culture in the party",
+        description:
+          "Seek out events rooted in local traditions or community vibes, not just the mainstream scene.",
+      },
+      {
+        title: "Capture, then curate",
+        description:
+          "Take the photos, then live the moment. Upload your favorite memories to your travel moodboard to reflect, share, and plan your next adventure.",
+      },
     ],
     ourRecommendations: [
       {
@@ -341,10 +417,26 @@ const archetypes = [
       "Scotland",
     ],
     howToTravelBetter: [
-      "Embrace enough: Choose quality experiences over quantity and resist the pressure to see it all.",
-      "Prioritize purpose over perfection: Don’t let the search for the right eco-option stall your journey — do your best, not your most.",
-      "Build connection into your itinerary: Seek moments where giving back and meaningful interaction are part of the plan.",
-      "Give back in creative ways: From cultural exchange to conservation, explore paths that deepen your impact. [Read our guide to volunteering differently →]",
+      {
+        title: "Embrace enough",
+        description:
+          "Choose quality experiences over quantity and resist the pressure to see it all.",
+      },
+      {
+        title: "Prioritize purpose over perfection",
+        description:
+          "Don’t let the search for the right eco-option stall your journey — do your best, not your most.",
+      },
+      {
+        title: "Build connection into your itinerary",
+        description:
+          "Seek moments where giving back and meaningful interaction are part of the plan.",
+      },
+      {
+        title: "Give back in creative ways",
+        description:
+          "From cultural exchange to conservation, explore paths that deepen your impact. [Read our guide to volunteering differently →]",
+      },
     ],
     ourRecommendations: [
       {
@@ -399,10 +491,26 @@ const archetypes = [
       "Vancouver",
     ],
     howToTravelBetter: [
-      "<strong>Leave room for spontaneity:</strong> Structure is your superpower, but the best memories are often unplanned, stay open to small surprises.",
-      "<strong>Remember it's your trip too:</strong> You pour into others constantly, but don't forget to carve out moments just for you. Maybe the hot tub at sunrise is yours alone. Choose at least one experience that fills your cup.",
-      "<strong>Include everyone's \"thing\":</strong> Whether it's your child's love of animals or your partner's need for quiet, building the trip around what matters to each person makes the experience more meaningful for everyone.",
-      "<strong>Capture stories as they unfold:</strong> Document the little moments, laughter, learning, and love across generations. Then revisit them together.",
+      {
+        title: "Leave room for spontaneity",
+        description:
+          "Structure is your superpower, but the best memories are often unplanned, stay open to small surprises.",
+      },
+      {
+        title: "Remember it's your trip too",
+        description:
+          "You pour into others constantly, but don't forget to carve out moments just for you. Maybe the hot tub at sunrise is yours alone. Choose at least one experience that fills your cup.",
+      },
+      {
+        title: 'Include everyone\'s "thing"',
+        description:
+          "Whether it's your child's love of animals or your partner's need for quiet, building the trip around what matters to each person makes the experience more meaningful for everyone.",
+      },
+      {
+        title: "Capture stories as they unfold",
+        description:
+          "Document the little moments, laughter, learning, and love across generations. Then revisit them together.",
+      },
     ],
     ourRecommendations: [
       {
@@ -464,10 +572,26 @@ const archetypes = [
       "New York",
     ],
     howToTravelBetter: [
-      '<strong>Follow the feeling, but check the basics:</strong> Let your heart lead, but make sure you know the last train time or how to say "thank you" in the local language.',
-      "<strong>Create space for serendipity:</strong> Don't over-plan. Leave gaps in your itinerary for the universe to surprise you.",
-      "<strong>Romanticize the small stuff:</strong> Whether it's a solo breakfast or a new scent, let ordinary moments become part of the story.",
-      "<strong>Soothe your senses:</strong> Carry things that ground and inspire you; fragrance, music, a pen, a silk scarf. Your sensory world is your sanctuary.",
+      {
+        title: "Follow the feeling, but check the basics",
+        description:
+          'Let your heart lead, but make sure you know the last train time or how to say "thank you" in the local language.',
+      },
+      {
+        title: "Create space for serendipity",
+        description:
+          "Don't over-plan. Leave gaps in your itinerary for the universe to surprise you.",
+      },
+      {
+        title: "Romanticize the small stuff",
+        description:
+          "Whether it's a solo breakfast or a new scent, let ordinary moments become part of the story.",
+      },
+      {
+        title: "Soothe your senses",
+        description:
+          "Carry things that ground and inspire you; fragrance, music, a pen, a silk scarf. Your sensory world is your sanctuary.",
+      },
     ],
     ourRecommendations: [
       {
@@ -526,10 +650,26 @@ const archetypes = [
       "Lagos",
     ],
     howToTravelBetter: [
-      "<strong>Don't rush the moment:</strong> Your inspiration lives in details. Take the time to linger, sketch, or snap what speaks to you.",
-      "<strong>Travel with a lens of curiosity:</strong> Treat each place like a studio, gallery, or story waiting to unfold.",
-      "<strong>Lose the map, find the magic:</strong> Plans are suggestions, not scripts. Your best stories often start with a wrong turn and a little curiosity.",
-      "<strong>Honor your creative rhythm:</strong> Capture what moves you, but don't feel pressure to create constantly. Reflection is part of the process too.",
+      {
+        title: "Don't rush the moment",
+        description:
+          "Your inspiration lives in details. Take the time to linger, sketch, or snap what speaks to you.",
+      },
+      {
+        title: "Travel with a lens of curiosity",
+        description:
+          "Treat each place like a studio, gallery, or story waiting to unfold.",
+      },
+      {
+        title: "Lose the map, find the magic",
+        description:
+          "Plans are suggestions, not scripts. Your best stories often start with a wrong turn and a little curiosity.",
+      },
+      {
+        title: "Honor your creative rhythm",
+        description:
+          "Capture what moves you, but don't feel pressure to create constantly. Reflection is part of the process too.",
+      },
     ],
     ourRecommendations: [
       {
@@ -581,10 +721,26 @@ const archetypes = [
     ],
     recommendedDestinations: ["Athens", "Ethiopia", "Cairo", "Rome", "Bath"],
     howToTravelBetter: [
-      "<strong>Don't overplan your learning:</strong> Leave space for unplanned discoveries that expand or challenge your current knowledge.",
-      "<strong>Go beyond the textbook:</strong> Talk to locals, guides, and elders. Oral histories often hold the insights that formal texts overlook.",
-      "<strong>Walk your curiosity:</strong> Cities are living archives. Architectural details, street names, and public art all carry clues.",
-      "<strong>Reflect as you go:</strong> Keep a running travel thesis or field journal to track your insights and evolving perspectives.",
+      {
+        title: "Don't overplan your learning",
+        description:
+          "Leave space for unplanned discoveries that expand or challenge your current knowledge.",
+      },
+      {
+        title: "Go beyond the textbook",
+        description:
+          "Talk to locals, guides, and elders. Oral histories often hold the insights that formal texts overlook.",
+      },
+      {
+        title: "Walk your curiosity",
+        description:
+          "Cities are living archives. Architectural details, street names, and public art all carry clues.",
+      },
+      {
+        title: "Reflect as you go",
+        description:
+          "Keep a running travel thesis or field journal to track your insights and evolving perspectives.",
+      },
     ],
     ourRecommendations: [
       {
@@ -647,10 +803,26 @@ const archetypes = [
       "Big Sur",
     ],
     howToTravelBetter: [
-      "<strong>Seek healing in tradition:</strong> From indigenous plant wisdom to ancient movement practices, explore modalities rooted in place.",
-      "<strong>Treat wellness as ritual, not reward:</strong> Rebalancing isn't a luxury, it's a way of honoring your body, mind, and spirit.",
-      '<strong>Know your limits, but stretch them gently:</strong> Try new wellness approaches, but don\'t overbook yourself in the name of "growth."',
-      "<strong>Protect your inputs:</strong> Travel opens you up. Filter what you take in. Food, media, noise, people, like your wellbeing depends on it (because it does).",
+      {
+        title: "Seek healing in tradition",
+        description:
+          "From indigenous plant wisdom to ancient movement practices, explore modalities rooted in place.",
+      },
+      {
+        title: "Treat wellness as ritual, not reward",
+        description:
+          "Rebalancing isn't a luxury, it's a way of honoring your body, mind, and spirit.",
+      },
+      {
+        title: "Know your limits, but stretch them gently",
+        description:
+          'Try new wellness approaches, but don\'t overbook yourself in the name of "growth."',
+      },
+      {
+        title: "Protect your inputs",
+        description:
+          "Travel opens you up. Filter what you take in. Food, media, noise, people, like your wellbeing depends on it (because it does).",
+      },
     ],
     ourRecommendations: [
       {
@@ -707,9 +879,21 @@ const archetypes = [
       "Barcelona",
     ],
     howToTravelBetter: [
-      "<strong>Create soft landings:</strong> Build micro-routines when you arrive. Your morning walk or go-to café can ground you wherever you are.",
-      "<strong>Stay long enough to belong:</strong> Slow down to learn local rhythms. Sometimes, you don't need to move on, you need to dig in.",
-      "<strong>Don't sacrifice one side for the other:</strong> Give space to both your wanderlust and your need for stillness. You thrive when both are honored.",
+      {
+        title: "Create soft landings",
+        description:
+          "Build micro-routines when you arrive. Your morning walk or go-to café can ground you wherever you are.",
+      },
+      {
+        title: "Stay long enough to belong",
+        description:
+          "Slow down to learn local rhythms. Sometimes, you don't need to move on, you need to dig in.",
+      },
+      {
+        title: "Don't sacrifice one side for the other",
+        description:
+          "Give space to both your wanderlust and your need for stillness. You thrive when both are honored.",
+      },
     ],
     ourRecommendations: [
       {
@@ -769,10 +953,26 @@ const archetypes = [
       "Amsterdam",
     ],
     howToTravelBetter: [
-      "<strong>Pace your peaks:</strong> Block in gentle mornings or recovery days between high‑octane nights so you can go hard without crashing.",
-      "<strong>Embrace the one‑night wildcard:</strong> Dedicate at least one evening to whatever surprise the night brings. No plans, just trust your instincts and the locals you meet.",
-      "<strong>Chase the secret sets:</strong> Follow local tastemakers and underground promoters on social for invite‑only pop‑ups and after‑hours experiences you won't find in any guidebook.",
-      "<strong>Create your travel ritual:</strong> Seek out a destination‑specific pre‑ or post‑party tradition (think Tokyo's late‑night ramen bowls or Salvador's sunrise capoeira circles) to ground your spree.",
+      {
+        title: "Pace your peaks",
+        description:
+          "Block in gentle mornings or recovery days between high‑octane nights so you can go hard without crashing.",
+      },
+      {
+        title: "Embrace the one‑night wildcard",
+        description:
+          "Dedicate at least one evening to whatever surprise the night brings. No plans, just trust your instincts and the locals you meet.",
+      },
+      {
+        title: "Chase the secret sets",
+        description:
+          "Follow local tastemakers and underground promoters on social for invite‑only pop‑ups and after‑hours experiences you won't find in any guidebook.",
+      },
+      {
+        title: "Create your travel ritual",
+        description:
+          "Seek out a destination‑specific pre‑ or post‑party tradition (think Tokyo's late‑night ramen bowls or Salvador's sunrise capoeira circles) to ground your spree.",
+      },
     ],
     ourRecommendations: [
       {
@@ -818,10 +1018,26 @@ const archetypes = [
       "Cancun",
     ],
     howToTravelBetter: [
-      "<strong>Build in creature comforts:</strong> Pack a few home‑base rituals (morning tea, favorite podcast, or bedtime ritual) to anchor each day.",
-      "<strong>Automate the essentials:</strong> Pre‑book transfers, restaurant reservations, and excursions so you can arrive and relax without last‑minute planning.",
-      "<strong>Lean on tech:</strong> Download offline maps, translation apps, and digital boarding passes in advance to keep stress at bay.",
-      "<strong>Plan one soft surprise:</strong> Let someone else pick a single novelty (a sunset boat ride or family‑style island lunch) to sprinkle delight without disrupting your flow.",
+      {
+        title: "Build in creature comforts",
+        description:
+          "Pack a few home‑base rituals (morning tea, favorite podcast, or bedtime ritual) to anchor each day.",
+      },
+      {
+        title: "Automate the essentials",
+        description:
+          "Pre‑book transfers, restaurant reservations, and excursions so you can arrive and relax without last‑minute planning.",
+      },
+      {
+        title: "Lean on tech",
+        description:
+          "Download offline maps, translation apps, and digital boarding passes in advance to keep stress at bay.",
+      },
+      {
+        title: "Plan one soft surprise",
+        description:
+          "Let someone else pick a single novelty (a sunset boat ride or family‑style island lunch) to sprinkle delight without disrupting your flow.",
+      },
     ],
     ourRecommendations: [
       {
@@ -885,10 +1101,26 @@ const archetypes = [
       "Japan",
     ],
     howToTravelBetter: [
-      "<strong>Follow the flow, not the map:</strong> Skip the main boulevards. Ride the bus, hop the neighborhood train, wander side streets where the real pulse of daily life beats.",
-      "<strong>Build reciprocal relationships:</strong> Carry small gifts. Spices, postcards, treats from home and offer to trade skills, stories, or a meal in return.",
-      "<strong>Dine where the locals dine:</strong> Trust busy hole‑in‑the‑wall eateries over guidebook stars. Look for spots ringing with chatter and familiar faces.",
-      "<strong>Capture stories, not selfies:</strong> Record conversations, sketch market scenes, or keep a “people’s diary” of local voices and customs you encounter.",
+      {
+        title: "Follow the flow, not the map",
+        description:
+          "Skip the main boulevards. Ride the bus, hop the neighborhood train, wander side streets where the real pulse of daily life beats.",
+      },
+      {
+        title: "Build reciprocal relationships",
+        description:
+          "Carry small gifts. Spices, postcards, treats from home and offer to trade skills, stories, or a meal in return.",
+      },
+      {
+        title: "Dine where the locals dine",
+        description:
+          "Trust busy hole‑in‑the‑wall eateries over guidebook stars. Look for spots ringing with chatter and familiar faces.",
+      },
+      {
+        title: "Capture stories, not selfies",
+        description:
+          "Record conversations, sketch market scenes, or keep a “people’s diary” of local voices and customs you encounter.",
+      },
     ],
     ourRecommendations: [
       {

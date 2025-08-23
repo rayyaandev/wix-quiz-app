@@ -34,23 +34,20 @@ function renderHeader() {
   if (!header) return;
 
   header.innerHTML = `
-    <nav style="background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);border-bottom:2px solid #f1b94f;padding:10px;position:sticky;top:0;z-index:1000;margin-bottom:10px">
-      <div style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 10px;">
+    <nav style="background:#11072e;padding:10px;position:sticky;top:0;z-index:1000;margin-bottom:10px;font-family:'Montserrat',sans-serif;font-size:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;max-width:700px;margin:0 auto;padding:0 10px;">
         <!-- Logo/Brand -->
         <div style="display:flex;align-items:center;gap:4px;">
           <img src="images/Page Icons/experiences.png" alt="Travel Experiences" style="width:4em;height:4em;object-fit:contain;">
-          <div style="font-size:1.4em;font-weight:bold;color:#f1b94f;">
-            Travel Archetype Quiz
-          </div>
         </div>
         
         <!-- Right Side: Language Selector -->
         <div style="display:flex;align-items:center;gap:20px;">
           <!-- Language Selector -->
-          <div style="display:flex;gap:4px;background:rgba(255,255,255,0.05);border-radius:8px;padding:4px;">
-            <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" style="padding:6px 12px;border-radius:6px;border:none;background:transparent;color:#f1b94f;cursor:pointer;font-weight:bold;font-size:0.9em;transition:all 0.2s ease;min-width:40px;">EN</button>
-            <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" style="padding:6px 12px;border-radius:6px;border:none;background:transparent;color:#f1b94f;cursor:pointer;font-weight:bold;font-size:0.9em;transition:all 0.2s ease;min-width:40px;">ES</button>
-            <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')" style="padding:6px 12px;border-radius:6px;border:none;background:transparent;color:#f1b94f;cursor:pointer;font-weight:bold;font-size:0.9em;transition:all 0.2s ease;min-width:40px;">FR</button>
+          <div style="display:flex;gap:4px;border-radius:8px;padding:4px;">
+            <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" style="padding:6px 12px;border-radius:8px;border:none;background:#f1b94f;color:#11072e;cursor:pointer;font-weight:bold;font-size:16px;transition:all 0.2s ease;min-width:40px;height:36px;font-family:'Montserrat',sans-serif;">EN</button>
+            <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" style="padding:6px 12px;border-radius:8px;border:none;background:#f1b94f;color:#11072e;cursor:pointer;font-weight:bold;font-size:16px;transition:all 0.2s ease;min-width:40px;height:36px;font-family:'Montserrat',sans-serif;">ES</button>
+            <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')" style="padding:6px 12px;border-radius:8px;border:none;background:#f1b94f;color:#11072e;cursor:pointer;font-weight:bold;font-size:16px;transition:all 0.2s ease;min-width:40px;height:36px;font-family:'Montserrat',sans-serif;">FR</button>
           </div>
         </div>
       </div>
@@ -540,25 +537,94 @@ function calculateArchetypeScores() {
     const question = questions[questionIndex];
     const answer = answers[questionIndex];
 
-    if (question.id === "ageRange" && quizLogic.ageRange[answer]) {
-      Object.keys(quizLogic.ageRange[answer]).forEach((archetypeId) => {
-        scores[archetypeId] += quizLogic.ageRange[answer][archetypeId];
-      });
-    }
+    // Skip questions without scoring logic
+    if (!answer || answer === "" || !quizLogic[question.id]) return;
 
-    if (
-      question.id === "personalityType" &&
-      quizLogic.personalityType[answer]
-    ) {
-      Object.keys(quizLogic.personalityType[answer]).forEach((archetypeId) => {
-        scores[archetypeId] += quizLogic.personalityType[answer][archetypeId];
-      });
-    }
+    // Handle different question types
+    if (question.type === "single" || question.type === "select") {
+      // Single choice questions
+      if (quizLogic[question.id][answer]) {
+        Object.keys(quizLogic[question.id][answer]).forEach((archetypeId) => {
+          scores[archetypeId] += quizLogic[question.id][answer][archetypeId];
+        });
+      }
+    } else if (question.type === "scale") {
+      // Scale questions (1-10)
+      if (quizLogic[question.id][answer]) {
+        Object.keys(quizLogic[question.id][answer]).forEach((archetypeId) => {
+          scores[archetypeId] += quizLogic[question.id][answer][archetypeId];
+        });
+      }
+    } else if (question.type === "multiselect") {
+      // Multiselect questions (languages)
+      if (Array.isArray(answer) && answer.length > 0) {
+        answer.forEach((selectedIndex) => {
+          const selectedOption = question.options[selectedIndex];
+          if (quizLogic[question.id][selectedOption.toLowerCase()]) {
+            Object.keys(
+              quizLogic[question.id][selectedOption.toLowerCase()]
+            ).forEach((archetypeId) => {
+              scores[archetypeId] +=
+                quizLogic[question.id][selectedOption.toLowerCase()][
+                  archetypeId
+                ];
+            });
+          }
+        });
+      }
+    } else if (question.type === "tag-multiselect") {
+      // Tag multiselect questions (values)
+      if (Array.isArray(answer) && answer.length > 0) {
+        answer.forEach((selectedIndex) => {
+          const selectedOption = question.options[selectedIndex];
+          if (
+            quizLogic[question.id][
+              selectedOption.text.toLowerCase().replace(/\s+/g, "")
+            ]
+          ) {
+            Object.keys(
+              quizLogic[question.id][
+                selectedOption.text.toLowerCase().replace(/\s+/g, "")
+              ]
+            ).forEach((archetypeId) => {
+              scores[archetypeId] +=
+                quizLogic[question.id][
+                  selectedOption.text.toLowerCase().replace(/\s+/g, "")
+                ][archetypeId];
+            });
+          }
+        });
+      }
+    } else if (question.type === "slider-multiselect") {
+      // Slider questions (priority rating, spending preferences)
+      if (typeof answer === "object" && answer !== null) {
+        Object.keys(answer).forEach((optionIndex) => {
+          const value = answer[optionIndex];
+          const option = question.options[optionIndex];
 
-    if (question.id === "humor" && quizLogic.humor[answer]) {
-      Object.keys(quizLogic.humor[answer]).forEach((archetypeId) => {
-        scores[archetypeId] += quizLogic.humor[answer][archetypeId];
-      });
+          // Find the closest scoring bracket
+          let closestScore = 0;
+          let minDifference = Infinity;
+
+          Object.keys(quizLogic[question.id]).forEach((scoreKey) => {
+            const scoreNum = parseInt(scoreKey);
+            const difference = Math.abs(value - scoreNum);
+            if (difference < minDifference) {
+              minDifference = difference;
+              closestScore = scoreKey;
+            }
+          });
+
+          if (quizLogic[question.id][closestScore]) {
+            Object.keys(quizLogic[question.id][closestScore]).forEach(
+              (archetypeId) => {
+                scores[archetypeId] +=
+                  quizLogic[question.id][closestScore][archetypeId];
+              }
+            );
+          }
+        });
+      }
     }
   });
 
@@ -787,7 +853,9 @@ function showResults() {
                   .map(
                     (tip, index) => `
                     <div class="travel-tip-item">
-                      <h4 class="tip-heading">${tip.title || tip}</h4>
+                      <h4 class="tip-heading"><strong>${
+                        tip.title || tip
+                      }</strong></h4>
                       <p class="tip-description">${tip.description || tip}</p>
                       ${
                         index < mainArchetype.howToTravelBetter.length - 1
