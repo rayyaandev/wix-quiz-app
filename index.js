@@ -1,7 +1,7 @@
 // Questions are loaded from constant.js
 
 // --- Quiz State ---
-let currentStep = 43; // 0 = intro, then questions in order
+let currentStep = 53; // 0 = intro, then questions in order
 let answers = {};
 let quizId = null; // Unique identifier for this quiz session
 let currentLanguage = "en"; // Default language
@@ -367,6 +367,13 @@ function renderQuizStep() {
           step.placeholder || getText("typeAnswer")
         }">`;
   }
+  if (step.type === "iframe") {
+    html += `<iframe width="${step.iframeWidth || "600"}" height="${
+      step.iframeHeight || "400"
+    }" src="${
+      step.iframeSrc
+    }" frameborder="0" scrolling="no" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;border-radius: 8px;box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>`;
+  }
   if (step.type === "tag-multiselect") {
     // Tag input at top
     html += `<div class="quiz-tag-multiselect" id="tag-multiselect">`;
@@ -407,6 +414,7 @@ function renderQuizStep() {
       (!answers[currentStep] || !answers[currentStep].trim())
     )
       nextDisabled = true;
+    if (step.type === "iframe") nextDisabled = false; // iframe questions are always valid
     if (
       step.type === "tag-multiselect" &&
       (!answers[currentStep] || answers[currentStep].length === 0)
@@ -747,7 +755,7 @@ function showResults() {
   } icon" style="width:200px;height:200px;border-radius:50%;object-fit:cover" />
           </div>
           <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">About your archetype</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
+          <p style="font-size:1em;line-height:1.6;color:#ffffff;font-weight:500;text-shadow:0 1px 2px rgba(0,0,0,0.3);">${
             mainArchetype.overview
           }</p>
         </div>
@@ -755,7 +763,7 @@ function showResults() {
         <!-- How You're Seen -->
         <div class="archetype-section" style="margin-bottom:25px;">
           <h3 style="font-size:1.2em;margin-bottom:12px;color:#f1b94f;">How You're Seen</h3>
-          <p style="font-size:0.95em;line-height:1.5;color:#e0e0e0;">${
+          <p style="font-size:1em;line-height:1.6;color:#ffffff;font-weight:500;text-shadow:0 1px 2px rgba(0,0,0,0.3);">${
             mainArchetype.howYoureSeen
           }</p>
         </div>
@@ -844,7 +852,7 @@ function showResults() {
                 : "")
             }" alt="Travel background for ${mainArchetype.name}" />
           </div>
-          <div class="travel-better-overlay">
+          <div class="travel-better-overlay" style="max-width: 60%; margin: 20px auto;">
             <h3 class="travel-better-title">How to travel better as a ${
               mainArchetype.name
             }:</h3>
