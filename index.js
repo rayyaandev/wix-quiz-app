@@ -679,7 +679,7 @@ function showResults() {
             : "")
         }" alt="${
     mainArchetype.imageAlt || mainArchetype.name
-  }" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;" /></div>
+  }" style="width:100%;max-height:400px;object-fit:cover;margin-bottom:20px;" /></div>
       </div>
       
       <!-- Main Results Card -->
